@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Ali - Your Mental Health Companion</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#943eea",
+                        "background-light": "#fcfaff",
+                        "background-dark": "#191121",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.75rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .ios-blur { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        /* Prevent elastic bounce on mobile but allow scrolling */
+        html, body {
+            height: 100%;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen pb-24">
+<!-- Top Navigation Bar -->
+<nav class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 ios-blur border-b border-primary/10 px-4 py-3 flex items-center justify-between safe-top">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden border-2 border-primary/30">
+<img alt="Ali Avatar" class="w-full h-full object-cover" data-alt="A friendly illustrated male avatar smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByp3SDaw1T496Y5O7boYMDHAGn55hmbwD7Xorb5qHI2u0NQQJh8YeZSUdE29dfllMeqPVb1tZk4A0ak7TdpjgRt_3wCFuF2lfNQkzTXoQPglHKgpdR0vdaaQNafEnFldgcdGuB_DyLVWOrDJ4OnCU38u6VuCVDvlZjtBoKdhWAIWPOuQvjy-Vzt5RtW_qQrP-k7EwvpCSNUNae7QYm0mWgMqzMJyFmVg8xgH_HbAFp5ltDR1l2NGWTqRYymOUM-sRYfMO5DKFYVHsU"/>
+</div>
+<div>
+<p class="text-[10px] font-medium text-primary/70">Good morning</p>
+<h1 class="text-base font-bold leading-tight">Hi, Ali!</h1>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="size-10 flex items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-sm border border-primary/10">
+<span class="material-symbols-outlined text-primary text-xl">notifications</span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-sm border border-primary/10">
+<span class="material-symbols-outlined text-primary text-xl">settings</span>
+</button>
+</div>
+</nav>
+<main class="max-w-md mx-auto p-4 space-y-6">
+<!-- Daily Streak Component (Duolingo Style) -->
+<div class="bg-gradient-to-br from-primary to-primary/80 rounded-xl p-4 text-white shadow-lg shadow-primary/20 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="bg-white/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1">local_fire_department</span>
+</div>
+<div>
+<p class="text-xl font-bold">12 Day Streak!</p>
+<p class="text-xs opacity-90 font-medium">Keep it up, Ali!</p>
+</div>
+</div>
+<div class="flex -space-x-1">
+<div class="size-2 rounded-full bg-white"></div>
+<div class="size-2 rounded-full bg-white ml-1"></div>
+<div class="size-2 rounded-full bg-white/40 ml-1"></div>
+</div>
+</div>
+<!-- Mascot Welcome Message -->
+<div class="flex flex-col items-center py-4 text-center">
+<div class="relative mb-4">
+<div class="absolute -top-2 -right-2 bg-primary/10 p-1.5 rounded-full animate-pulse z-10">
+<span class="material-symbols-outlined text-primary text-lg">auto_awesome</span>
+</div>
+<div class="size-28 rounded-full bg-gradient-to-tr from-primary/30 to-primary/5 p-1">
+<img alt="Mascot" class="w-full h-full rounded-full bg-white shadow-inner object-cover" data-alt="Friendly robot mascot with soft colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7fuoElXfgcBM_-YdXgHZtrVYOPKFNUkp9IRgZD0ViLYiHMDa9dwMb6s4XQwv_LlEO_fyDQrJ6sJJ3zctgeRPAxvMhctPqvzD9Ato2VOiA5uUNwCWKrz5i0FnZ1mumnmjhhx8mVmuRoFPIg_SnFWotcjWDAUrJOiQHyPRdS-v5CSf-oSshL0VLc-a_zLkzUa-h-3osxyC1zJyN2IS79EEG0LIEA9j4PTlLcr-lPB9RmbGhP_1ASMdIMFV_AN2fljMJvsNk4FCdJhrR"/>
+</div>
+</div>
+<h2 class="text-lg font-bold mb-1">How are you feeling today?</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Checking in helps you track your progress</p>
+</div>
+<!-- Emotion Selector -->
+<div class="grid grid-cols-5 gap-1.5 px-0">
+<button class="flex flex-col items-center gap-1.5 p-2 rounded-xl hover:bg-primary/5 transition-colors group">
+<span class="material-symbols-outlined text-2xl text-slate-400 group-hover:text-primary transition-colors">sentiment_very_dissatisfied</span>
+<span class="text-[9px] font-bold text-slate-500 uppercase">Awful</span>
+</button>
+<button class="flex flex-col items-center gap-1.5 p-2 rounded-xl hover:bg-primary/5 transition-colors group">
+<span class="material-symbols-outlined text-2xl text-slate-400 group-hover:text-primary transition-colors">sentiment_dissatisfied</span>
+<span class="text-[9px] font-bold text-slate-500 uppercase">Sad</span>
+</button>
+<button class="flex flex-col items-center gap-1.5 p-2 rounded-xl bg-primary/10 border border-primary/20 group">
+<span class="material-symbols-outlined text-2xl text-primary" style="font-variation-settings: 'FILL' 1">sentiment_neutral</span>
+<span class="text-[9px] font-bold text-primary uppercase">Okay</span>
+</button>
+<button class="flex flex-col items-center gap-1.5 p-2 rounded-xl hover:bg-primary/5 transition-colors group">
+<span class="material-symbols-outlined text-2xl text-slate-400 group-hover:text-primary transition-colors">sentiment_satisfied</span>
+<span class="text-[9px] font-bold text-slate-500 uppercase">Good</span>
+</button>
+<button class="flex flex-col items-center gap-1.5 p-2 rounded-xl hover:bg-primary/5 transition-colors group">
+<span class="material-symbols-outlined text-2xl text-slate-400 group-hover:text-primary transition-colors">sentiment_very_satisfied</span>
+<span class="text-[9px] font-bold text-slate-500 uppercase">Great</span>
+</button>
+</div>
+<!-- Primary Action Card -->
+<div class="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm border border-primary/10 flex flex-col items-center text-center">
+<div class="bg-primary/10 p-4 rounded-full mb-4">
+<span class="material-symbols-outlined text-4xl text-primary">self_improvement</span>
+</div>
+<h3 class="text-lg font-bold mb-2">Ready for your daily session?</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-6 px-4">Just 5 minutes to center your mind and reduce stress.</p>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3.5 rounded-xl shadow-md transition-all active:scale-95 flex items-center justify-center gap-2">
+<span>Start Daily Exercise</span>
+<span class="material-symbols-outlined">play_circle</span>
+</button>
+</div>
+<!-- Mood Summary Chart Card -->
+<div class="bg-white dark:bg-slate-800 rounded-xl p-5 shadow-sm border border-primary/10">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-sm font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">analytics</span>
+                    Mood Summary
+                </h3>
+<span class="text-[10px] font-semibold text-slate-400">Last 7 Days</span>
+</div>
+<div class="flex items-end justify-between h-32 gap-2 px-1">
+<div class="flex-1 bg-primary/20 rounded-t-md h-[40%]" title="Mon"></div>
+<div class="flex-1 bg-primary/20 rounded-t-md h-[60%]" title="Tue"></div>
+<div class="flex-1 bg-primary/40 rounded-t-md h-[80%]" title="Wed"></div>
+<div class="flex-1 bg-primary/20 rounded-t-md h-[50%]" title="Thu"></div>
+<div class="flex-1 bg-primary rounded-t-md h-[95%]" title="Fri"></div>
+<div class="flex-1 bg-primary/60 rounded-t-md h-[70%]" title="Sat"></div>
+<div class="flex-1 bg-primary/30 rounded-t-md h-[45%]" title="Sun"></div>
+</div>
+<div class="flex justify-between mt-2 text-[10px] font-bold text-slate-400 uppercase">
+<span class="w-full text-center">M</span>
+<span class="w-full text-center">T</span>
+<span class="w-full text-center">W</span>
+<span class="w-full text-center">T</span>
+<span class="w-full text-center">F</span>
+<span class="w-full text-center">S</span>
+<span class="w-full text-center">S</span>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<div class="fixed bottom-0 left-0 right-0 bg-white/95 dark:bg-slate-900/95 ios-blur border-t border-primary/10 pb-8 pt-3 px-2 flex justify-around safe-bottom">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">home</span>
+<p class="text-[9px] font-bold uppercase tracking-tighter">Home</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">school</span>
+<p class="text-[9px] font-bold uppercase tracking-tighter">Learn</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">forum</span>
+<p class="text-[9px] font-bold uppercase tracking-tighter">Chat</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<p class="text-[9px] font-bold uppercase tracking-tighter">Progress</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<p class="text-[9px] font-bold uppercase tracking-tighter">Booking</p>
+</a>
+</div>
+</body></html>

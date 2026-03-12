@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#943eea",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#191121",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Ali - Meditation &amp; Breathing</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen w-full flex-col max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-xl">
+<!-- Header -->
+<div class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center p-4 justify-between">
+<div class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-sm cursor-pointer">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center">Meditation &amp; Breathing</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="flex size-10 cursor-pointer items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-sm text-slate-900 dark:text-slate-100">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="px-4 pb-4">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="text-primary flex items-center justify-center pl-4">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-slate-900 dark:text-slate-100 focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-slate-400 dark:placeholder:text-slate-500 px-4 pl-2 text-base font-normal" placeholder="Search sessions, sounds..." value=""/>
+</div>
+</label>
+</div>
+<!-- Category Filter Pills -->
+<div class="flex gap-3 px-4 pb-4 overflow-x-auto no-scrollbar">
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary text-white px-5 shadow-md shadow-primary/20">
+<p class="text-sm font-semibold">All</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 px-5 text-slate-600 dark:text-slate-400">
+<p class="text-sm font-medium">Quick Calm</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 px-5 text-slate-600 dark:text-slate-400">
+<p class="text-sm font-medium">Better Sleep</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 px-5 text-slate-600 dark:text-slate-400">
+<p class="text-sm font-medium">Focus Boost</p>
+</div>
+</div>
+</div>
+<!-- Main Content -->
+<div class="flex-1 px-4 overflow-y-auto pb-24">
+<!-- Featured Section -->
+<div class="relative w-full aspect-[16/9] rounded-xl overflow-hidden mb-8 group bg-gradient-to-br from-primary to-indigo-600">
+<div class="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&amp;fit=crop&amp;q=80&amp;w=800')] bg-cover bg-center" data-alt="Soft purple and blue bokeh background"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<span class="bg-white/20 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded mb-2 inline-block">Daily Pick</span>
+<h3 class="text-white text-2xl font-bold mb-1">Morning Serenity</h3>
+<p class="text-white/80 text-sm">10 min • Guided Meditation</p>
+</div>
+<div class="absolute bottom-6 right-6">
+<div class="size-12 rounded-full bg-white flex items-center justify-center text-primary shadow-lg">
+<span class="material-symbols-outlined !text-3xl">play_arrow</span>
+</div>
+</div>
+</div>
+<!-- Quick Calm Section -->
+<div class="mb-8">
+<div class="flex justify-between items-center mb-4">
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold">Quick Calm</h2>
+<span class="text-primary text-sm font-semibold">See all</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col gap-3">
+<div class="size-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+<span class="material-symbols-outlined">air</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-slate-100">Box Breathing</p>
+<p class="text-xs text-slate-500">3 minutes</p>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col gap-3">
+<div class="size-10 rounded-lg bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 flex items-center justify-center">
+<span class="material-symbols-outlined">self_improvement</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-slate-100">Anxiety Relief</p>
+<p class="text-xs text-slate-500">5 minutes</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Better Sleep Section -->
+<div class="mb-8">
+<div class="flex justify-between items-center mb-4">
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold">Better Sleep</h2>
+<span class="text-primary text-sm font-semibold">See all</span>
+</div>
+<div class="space-y-4">
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm flex items-center gap-4">
+<div class="size-14 rounded-xl bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-gradient-to-br from-indigo-500 to-purple-600 opacity-20" data-alt="Abstract indigo gradient pattern"></div>
+<span class="material-symbols-outlined text-indigo-600 absolute">nights_stay</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-slate-900 dark:text-slate-100">Deep Sleep Journey</p>
+<p class="text-xs text-slate-500">25 minutes • Ambient</p>
+</div>
+<span class="material-symbols-outlined text-slate-300">more_vert</span>
+</div>
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm flex items-center gap-4">
+<div class="size-14 rounded-xl bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-gradient-to-br from-teal-500 to-emerald-600 opacity-20" data-alt="Abstract teal gradient pattern"></div>
+<span class="material-symbols-outlined text-teal-600 absolute">water_drop</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-slate-900 dark:text-slate-100">Rainfall Melodies</p>
+<p class="text-xs text-slate-500">Continuous • Nature</p>
+</div>
+<span class="material-symbols-outlined text-slate-300">more_vert</span>
+</div>
+</div>
+</div>
+<!-- Focus Boost Section -->
+<div class="mb-8">
+<div class="flex justify-between items-center mb-4">
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold">Focus Boost</h2>
+<span class="text-primary text-sm font-semibold">See all</span>
+</div>
+<div class="flex gap-4 overflow-x-auto no-scrollbar pb-2">
+<div class="min-w-[140px] bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm">
+<div class="size-12 rounded-full bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 flex items-center justify-center mb-3">
+<span class="material-symbols-outlined">lightbulb</span>
+</div>
+<p class="font-bold text-slate-900 dark:text-slate-100">Clear Mind</p>
+<p class="text-xs text-slate-500">8 mins</p>
+</div>
+<div class="min-w-[140px] bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm">
+<div class="size-12 rounded-full bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 flex items-center justify-center mb-3">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<p class="font-bold text-slate-900 dark:text-slate-100">Peak Focus</p>
+<p class="text-xs text-slate-500">12 mins</p>
+</div>
+<div class="min-w-[140px] bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm">
+<div class="size-12 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-3">
+<span class="material-symbols-outlined">edit</span>
+</div>
+<p class="font-bold text-slate-900 dark:text-slate-100">Creative Flow</p>
+<p class="text-xs text-slate-500">15 mins</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-white/90 dark:bg-background-dark/90 backdrop-blur-lg border-t border-slate-100 dark:border-slate-800 px-4 pb-6 pt-3 flex justify-between items-center z-20">
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined !text-[24px]">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined !text-[24px] fill-[1]">library_books</span>
+<span class="text-[10px] font-bold">Library</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined !text-[24px]">bar_chart</span>
+<span class="text-[10px] font-medium">Stats</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined !text-[24px]">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</div>
+</div>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .fill-\[1\] {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</body></html>

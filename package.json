@@ -1,0 +1,12 @@
+{
+  "name": "ali-mental-health",
+  "version": "1.0.0",
+  "description": "Ali - Mental Health Companion App",
+  "scripts": {
+    "start": "npx serve -l 3000",
+    "dev": "npx serve -l 3000"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Ali - Mental Health Companion</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+    darkMode: 'class',
+    theme: {
+        extend: {
+            colors: {
+                'primary': '#943eea',
+                'secondary': '#60a5fa',
+                'background-light': '#fcfaff',
+                'soft-blue': '#e0f2fe',
+                'soft-green': '#dcfce7',
+                'soft-peach': '#ffedd5',
+                'soft-lavender': '#ede9fe',
+            },
+            fontFamily: {'display': ['Plus Jakarta Sans', 'sans-serif']},
+        },
+    },
+}
+</script>
+<style>
+body { font-family: 'Plus Jakarta Sans', sans-serif; -webkit-tap-highlight-color: transparent; }
+.hidden { display: none !important; }
+.breathe { animation: breathe 4s ease-in-out infinite; }
+@keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+</style>
+</head>
+<body class="bg-background-light text-slate-900 min-h-screen overflow-hidden">
+
+<!-- SPLASH -->
+<div id="screen-splash" class="h-screen flex items-center justify-center bg-gradient-to-br from-primary via-purple-500 to-indigo-600">
+<div class="text-center">
+<div class="w-24 h-24 rounded-3xl bg-white/20 mx-auto mb-6 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl">psychology</span>
+</div>
+<h1 class="text-4xl font-bold text-white mb-2">Ali</h1>
+<p class="text-white/80">Your mental health companion</p>
+</div>
+</div>
+
+<!-- HOME -->
+<div id="screen-home" class="screen hidden h-screen overflow-y-auto pb-24">
+<nav class="sticky top-0 z-50 bg-background-light/80 backdrop-blur border-b border-primary/10 px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center border-2 border-primary/30 font-bold text-primary">A</div>
+<div><p class="text-[10px] text-primary/70" id="greeting">Good morning</p><h1 class="font-bold" id="home-username">Friend</h1></div>
+</div>
+<div class="flex gap-2">
+<button onclick="nav('notifications')" class="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center text-primary">N</button>
+<button onclick="nav('settings')" class="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center text-primary">S</button>
+</div>
+</nav>
+<main class="p-4 space-y-4">
+<div class="bg-gradient-to-br from-primary to-primary/80 rounded-xl p-4 text-white">
+<div class="flex items-center gap-4">
+<div class="bg-white/20 p-2 rounded-lg"><span class="text-2xl">🔥</span></div>
+<div><p class="text-xl font-bold" id="streak-display">12 Day Streak!</p><p class="text-xs opacity-90">Keep it up!</p></div>
+</div>
+</div>
+<div class="bg-white rounded-xl p-4 shadow">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-12 h-12 rounded-xl bg-soft-lavender flex items-center justify-center text-2xl">🤖</div>
+<div><h3 class="font-bold">Daily Check-in</h3><p class="text-sm text-slate-500">How are you feeling?</p></div>
+</div>
+<button onclick="nav('checkin')" class="w-full bg-primary text-white font-bold py-2.5 rounded-lg">Check In Now</button>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<button onclick="nav('chat')" class="p-2 bg-white rounded-lg shadow text-center"><div class="w-8 h-8 rounded-full bg-primary/10 mx-auto mb-1 flex items-center justify-center">💬</div><span class="text-xs">Chat</span></button>
+<button onclick="nav('journal')" class="p-2 bg-white rounded-lg shadow text-center"><div class="w-8 h-8 rounded-full bg-green-100 mx-auto mb-1 flex items-center justify-center">📝</div><span class="text-xs">Journal</span></button>
+<button onclick="nav('exercises')" class="p-2 bg-white rounded-lg shadow text-center"><div class="w-8 h-8 rounded-full bg-orange-100 mx-auto mb-1 flex items-center justify-center">🧘</div><span class="text-xs">Exercises</span></button>
+<button onclick="nav('therapists')" class="p-2 bg-white rounded-lg shadow text-center"><div class="w-8 h-8 rounded-full bg-blue-100 mx-auto mb-1 flex items-center justify-center">👨‍⚕️</div><span class="text-xs">Help</span></button>
+</div>
+<div class="bg-white rounded-xl p-4 shadow">
+<h3 class="font-bold mb-2">Weekly Mood</h3>
+<div class="flex items-end justify-between h-16 gap-1">
+<div class="flex-1 bg-primary/20 rounded-t h-[50%]"></div>
+<div class="flex-1 bg-primary/40 rounded-t h-[70%]"></div>
+<div class="flex-1 bg-primary/60 rounded-t h-[60%]"></div>
+<div class="flex-1 bg-primary/80 rounded-t h-[85%]"></div>
+<div class="flex-1 bg-primary rounded-t h-[75%]"></div>
+<div class="flex-1 bg-primary/50 rounded-t h-[65%]"></div>
+<div class="flex-1 bg-primary/30 rounded-t h-[55%]"></div>
+</div>
+<div class="flex justify-between text-xs text-slate-400 mt-1"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+</div>
+</main>
+</div>
+
+<!-- CHECK-IN -->
+<div id="screen-checkin" class="screen hidden h-screen flex flex-col">
+<nav class="bg-white p-4 border-b flex items-center gap-3">
+<button onclick="nav('home')" class="text-primary text-xl">←</button>
+<h2 class="font-bold">Daily Check-in</h2>
+</nav>
+<main class="flex-1 p-4 space-y-4 overflow-y-auto pb-24">
+<div class="bg-white rounded-xl p-4 shadow">
+<h3 class="font-bold mb-3 text-center">How are you feeling?</h3>
+<div class="flex justify-around">
+<button onclick="selectCheckinMood('awful')" class="text-3xl p-2">😔</button>
+<button onclick="selectCheckinMood('bad')" class="text-3xl p-2">😕</button>
+<button onclick="selectCheckinMood('okay')" class="text-3xl p-2 bg-primary/10 rounded-lg">😐</button>
+<button onclick="selectCheckinMood('good')" class="text-3xl p-2">😊</button>
+<button onclick="selectCheckinMood('great')" class="text-3xl p-2">😄</button>
+</div>
+</div>
+<div class="bg-white rounded-xl p-4 shadow">
+<h3 class="font-bold mb-2">Energy Level</h3>
+<input type="range" min="1" max="10" value="5" class="w-full accent-primary">
+</div>
+<div class="bg-white rounded-xl p-4 shadow">
+<h3 class="font-bold mb-2">Stress Level</h3>
+<input type="range" min="1" max="10" value="5" class="w-full accent-primary">
+</div>
+<div class="bg-white rounded-xl p-4 shadow">
+<h3 class="font-bold mb-2">Notes</h3>
+<textarea class="w-full border rounded-lg p-2 text-sm" rows="3" placeholder="What's on your mind?"></textarea>
+</div>
+<button onclick="finishCheckin()" class="w-full bg-primary text-white font-bold py-3 rounded-xl">Save</button>
+</main>
+</div>
+
+<!-- CHAT -->
+<div id="screen-chat" class="screen hidden h-screen flex flex-col">
+<nav class="sticky top-0 bg-white/80 backdrop-blur p-4 border-b flex items-center justify-between">
+<div onclick="nav('home')" class="text-primary">←</div>
+<div class="text-center"><h2 class="font-bold">Ali</h2><span class="text-xs text-green-500">● Online</span></div>
+<button onclick="nav('crisis')" class="text-red-500 text-xs">Crisis?</button>
+</nav>
+<main class="flex-1 overflow-y-auto p-4 space-y-4" id="chat-messages">
+<div class="flex gap-3 max-w-[85%]">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-xs font-bold text-primary">AI</div>
+<div class="bg-white rounded-2xl p-3 shadow text-sm">Hi! I'm Ali. How are you feeling today?</div>
+</div>
+</main>
+<footer class="p-3 bg-white border-t">
+<div class="flex gap-2">
+<input id="chat-input" class="flex-1 bg-slate-100 rounded-full px-4 py-2 text-sm" placeholder="Message..."/>
+<button onclick="sendChat()" class="w-10 h-10 rounded-full bg-primary text-white">→</button>
+</div>
+</footer>
+</div>
+
+<!-- LEARN -->
+<div id="screen-learn" class="screen hidden h-screen overflow-y-auto pb-24">
+<nav class="sticky top-0 bg-background-light/80 backdrop-blur p-4 border-b">
+<h2 class="font-bold text-center">Learn</h2>
+</nav>
+<main class="p-4 space-y-3">
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-white rounded-xl p-4 shadow cursor-pointer" onclick="selectLearningPath('anxiety')">
+<div class="text-3xl mb-2">😰</div>
+<h3 class="font-bold text-sm">Managing Anxiety</h3>
+<p class="text-xs text-slate-500">8 lessons</p>
+<div class="w-full bg-gray-200 rounded-full h-1.5 mt-2"><div class="bg-primary h-1.5 rounded-full" style="width:30%"></div></div>
+</div>
+<div class="bg-white rounded-xl p-4 shadow cursor-pointer" onclick="selectLearningPath('emotions')">
+<div class="text-3xl mb-2">🧠</div>
+<h3 class="font-bold text-sm">Understanding Emotions</h3>
+<p class="text-xs text-slate-500">6 lessons</p>
+<div class="w-full bg-gray-200 rounded-full h-1.5 mt-2"><div class="bg-green-500 h-1.5 rounded-full" style="width:60%"></div></div>
+</div>
+<div class="bg-white rounded-xl p-4 shadow cursor-pointer" onclick="selectLearningPath('self_esteem')">
+<div class="text-3xl mb-2">💪</div>
+<h3 class="font-bold text-sm">Self-Esteem</h3>
+<p class="text-xs text-slate-500">10 lessons</p>
+</div>
+<div class="bg-white rounded-xl p-4 shadow cursor-pointer" onclick="selectLearningPath('relationships')">
+<div class="text-3xl mb-2">❤️</div>
+<h3 class="font-bold text-sm">Relationships</h3>
+<p class="text-xs text-slate-500">7 lessons</p>
+</div>
+</div>
+</main>
+</div>
+
+<!-- PROGRESS -->
+<div id="screen-progress" class="screen hidden h-screen overflow-y-auto pb-24">
+<nav class="sticky top-0 bg-white p-4 border-b flex items-center gap-3">
+<button onclick="nav('home')" class="text-primary">←</button>
+<h2 class="font-bold">Your Progress</h2>
+</nav>
+<main class="p-4 space-y-4">
+<div class="grid grid-cols-3 gap-3">
+<div class="bg-white rounded-xl p-4 text-center shadow"><p class="text-2xl font-bold text-primary">12</p><p class="text-xs">Streak</p></div>
+<div class="bg-white rounded-xl p-4 text-center shadow"><p class="text-2xl font-bold text-green-500">47</p><p class="text-xs">Points</p></div>
+<div class="bg-white rounded-xl p-4 text-center shadow"><p class="text-2xl font-bold text-orange-500">3</p><p class="text-xs">Badges</p></div>
+</div>
+<div class="bg-white rounded-xl p-4 shadow">
+<h3 class="font-bold mb-3">AI Insights</h3>
+<div class="bg-soft-blue rounded-lg p-3 text-sm mb-2">📊 Your mood improves on days with morning exercises.</div>
+<div class="bg-soft-green rounded-lg p-3 text-sm">💡 You're more anxious on workdays.</div>
+</div>
+</main>
+</div>
+
+<!-- JOURNAL -->
+<div id="screen-journal" class="screen hidden h-screen flex flex-col">
+<nav class="sticky top-0 bg-white p-4 border-b flex justify-between">
+<h2 class="font-bold">Journal</h2>
+<button onclick="newJournalEntry()" class="text-primary font-medium">+ New</button>
+</nav>
+<main class="flex-1 p-4 space-y-3 overflow-y-auto pb-24">
+<div class="bg-white rounded-xl p-4 shadow border-l-4 border-green-500">
+<p class="text-xs text-slate-400">Today</p>
+<p class="text-sm mt-1">Had a great meditation. Feeling centered.</p>
+</div>
+<div class="bg-white rounded-xl p-4 shadow border-l-4 border-orange-500">
+<p class="text-xs text-slate-400">Yesterday</p>
+<p class="text-sm mt-1">Work has been stressful. Need better boundaries.</p>
+</div>
+</main>
+</div>
+
+<!-- EXERCISES -->
+<div id="screen-exercises" class="screen hidden h-screen overflow-y-auto pb-24">
+<nav class="sticky top-0 bg-white p-4 border-b flex items-center gap-3">
+<button onclick="nav('home')" class="text-primary">←</button>
+<h2 class="font-bold">Exercises</h2>
+</nav>
+<main class="p-4 space-y-3">
+<div class="bg-white rounded-xl p-4 shadow flex items-center gap-3 cursor-pointer" onclick="nav('exercise-detail')">
+<div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-xl">🌬️</div>
+<div class="flex-1"><h4 class="font-bold text-sm">Box Breathing</h4><p class="text-xs text-slate-500">3 min • Beginner</p></div>
+<span class="text-slate-400">›</span>
+</div>
+<div class="bg-white rounded-xl p-4 shadow flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center text-xl">🧘</div>
+<div class="flex-1"><h4 class="font-bold text-sm">5-4-3-2-1 Grounding</h4><p class="text-xs text-slate-500">5 min</p></div>
+<span class="text-slate-400">›</span>
+</div>
+<div class="bg-white rounded-xl p-4 shadow flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center text-xl">😴</div>
+<div class="flex-1"><h4 class="font-bold text-sm">Sleep Wind-down</h4><p class="text-xs text-slate-500">15 min</p></div>
+<span class="text-slate-400">›</span>
+</div>
+</main>
+</div>
+
+<!-- EXERCISE DETAIL -->
+<div id="screen-exercise-detail" class="screen hidden h-screen flex flex-col">
+<nav class="bg-white p-4 border-b flex items-center gap-3">
+<button onclick="nav('exercises')" class="text-primary">←</button>
+<h2 class="font-bold">Box Breathing</h2>
+</nav>
+<main class="flex-1 flex flex-col items-center justify-center p-6">
+<div class="w-40 h-40 rounded-full bg-primary/20 flex items-center justify-center mb-8 breathe">
+<div class="w-28 h-28 rounded-full bg-primary/40 flex items-center justify-center">
+<div class="text-3xl font-bold text-primary" id="exercise-timer">3:00</div>
+</div>
+</div>
+<p class="text-center text-slate-500 mb-6">Inhale 4s • Hold 4s • Exhale 4s • Hold 4s</p>
+<button onclick="toggleExercise()" class="w-full bg-primary text-white font-bold py-3 rounded-xl">Start</button>
+</main>
+</div>
+
+<!-- THERAPISTS -->
+<div id="screen-therapists" class="screen hidden h-screen overflow-y-auto pb-24">
+<nav class="sticky top-0 bg-white p-4 border-b flex items-center gap-3">
+<button onclick="nav('home')" class="text-primary">←</button>
+<h2 class="font-bold">Find a Professional</h2>
+</nav>
+<main class="p-4 space-y-3">
+<div class="bg-white rounded-xl p-4 shadow">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center text-xl">👨‍⚕️</div>
+<div><h4 class="font-bold">Dr. Marie Laurent</h4><p class="text-xs text-slate-500">Clinical Psychologist</p></div>
+</div>
+<p class="text-sm text-slate-600 mb-3">Specializes in anxiety, stress management, and life transitions.</p>
+<div class="flex justify-between items-center">
+<span class="text-primary font-bold">€60/session</span>
+<button class="bg-primary text-white px-4 py-1.5 rounded-lg text-sm">Book</button>
+</div>
+</div>
+<div class="bg-white rounded-xl p-4 shadow">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center text-xl">👩‍⚕️</div>
+<div><h4 class="font-bold">Dr. Pierre Dubois</h4><p class="text-xs text-slate-500">Therapist</p></div>
+</div>
+<p class="text-sm text-slate-600 mb-3">Depression, relationships, self-esteem expert.</p>
+<div class="flex justify-between items-center">
+<span class="text-primary font-bold">€50/session</span>
+<button class="bg-primary text-white px-4 py-1.5 rounded-lg text-sm">Book</button>
+</div>
+</div>
+</main>
+</div>
+
+<!-- PROFILE -->
+<div id="screen-profile" class="screen hidden h-screen overflow-y-auto pb-24">
+<nav class="sticky top-0 bg-white p-4 border-b flex items-center gap-3">
+<button onclick="nav('home')" class="text-primary">←</button>
+<h2 class="font-bold">Profile</h2>
+</nav>
+<main class="p-4 space-y-4">
+<div class="bg-white rounded-xl p-6 shadow text-center">
+<div class="w-20 h-20 rounded-full bg-primary mx-auto mb-3 flex items-center justify-center text-white text-3xl font-bold">A</div>
+<h2 class="font-bold text-xl" id="profile-name">Friend</h2>
+<p class="text-sm text-slate-500" id="profile-email">user@email.com</p>
+</div>
+<div class="space-y-2">
+<div class="bg-white rounded-xl p-4 shadow flex justify-between items-center"><span>Edit Profile</span><span class="text-slate-400">›</span></div>
+<div class="bg-white rounded-xl p-4 shadow flex justify-between items-center"><span>Achievements</span><span class="text-slate-400">›</span></div>
+<div class="bg-white rounded-xl p-4 shadow flex justify-between items-center"><span>Notifications</span><span class="text-slate-400">›</span></div>
+<div class="bg-white rounded-xl p-4 shadow flex justify-between items-center"><span>Privacy</span><span class="text-slate-400">›</span></div>
+</div>
+</main>
+</div>
+
+<!-- SETTINGS -->
+<div id="screen-settings" class="screen hidden h-screen overflow-y-auto pb-24">
+<nav class="sticky top-0 bg-white p-4 border-b flex items-center gap-3">
+<button onclick="nav('home')" class="text-primary">←</button>
+<h2 class="font-bold">Settings</h2>
+</nav>
+<main class="p-4 space-y-2">
+<div class="bg-white rounded-xl p-4 shadow flex justify-between items-center"><span>Dark Mode</span><div class="w-10 h-5 bg-gray-300 rounded-full"><div class="w-4 h-4 bg-white rounded-full ml-0.5"></div></div></div>
+<div class="bg-white rounded-xl p-4 shadow flex justify-between items-center"><span>Notifications</span><span class="text-slate-400">›</span></div>
+<div class="bg-white rounded-xl p-4 shadow flex justify-between items-center"><span>Privacy</span><span class="text-slate-400">›</span></div>
+<div class="bg-white rounded-xl p-4 shadow flex justify-between items-center"><span>Help & Support</span><span class="text-slate-400">›</span></div>
+<div class="bg-red-50 rounded-xl p-4"><span class="text-red-600">Log Out</span></div>
+</main>
+</div>
+
+<!-- NOTIFICATIONS -->
+<div id="screen-notifications" class="screen hidden h-screen overflow-y-auto pb-24">
+<nav class="sticky top-0 bg-white p-4 border-b flex items-center gap-3">
+<button onclick="nav('home')" class="text-primary">←</button>
+<h2 class="font-bold">Notifications</h2>
+</nav>
+<main class="p-4 space-y-2">
+<div class="bg-white rounded-xl p-4 shadow"><p class="font-medium text-sm">Great job!</p><p class="text-xs text-slate-500">You completed 5 lessons this week</p><p class="text-xs text-slate-400 mt-1">2h ago</p></div>
+<div class="bg-white rounded-xl p-4 shadow"><p class="font-medium text-sm">Reminder</p><p class="text-xs text-slate-500">Don't forget your daily check-in</p><p class="text-xs text-slate-400 mt-1">5h ago</p></div>
+</main>
+</div>
+
+<!-- CRISIS -->
+<div id="screen-crisis" class="screen hidden h-screen bg-red-50">
+<nav class="bg-red-50 p-4 border-b flex items-center gap-3">
+<button onclick="nav('chat')" class="text-red-600">←</button>
+<h2 class="font-bold text-red-600">Crisis Support</h2>
+</nav>
+<main class="p-6 space-y-6">
+<div class="bg-white rounded-xl p-6 shadow text-center">
+<span class="text-5xl mb-4 block">🆘</span>
+<h3 class="font-bold text-xl mb-2">You're Not Alone</h3>
+<p class="text-slate-600 mb-4">If you're in immediate danger, please call emergency services.</p>
+<a href="tel:15" class="block w-full bg-red-600 text-white font-bold py-3 rounded-xl mb-2">Call 15 (SAMU)</a>
+<a href="tel:17" class="block w-full bg-red-600 text-white font-bold py-3 rounded-xl mb-2">Call 17 (Police)</a>
+</div>
+<div class="bg-white rounded-xl p-4 shadow">
+<h4 class="font-bold mb-2">Helplines</h4>
+<p class="text-sm">• Psychiatry Urgencies: 01 40 05 48 48</p>
+<p class="text-sm">• SOS Amitié: 01 40 09 15 22</p>
+</div>
+<button onclick="nav('chat')" class="w-full bg-white border border-red-600 text-red-600 font-bold py-3 rounded-xl">Talk to Ali</button>
+</main>
+</div>
+
+<!-- BOTTOM NAV -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white border-t pb-6 pt-2 px-2 flex justify-around text-xs">
+<button onclick="nav('home')" id="nav-home" class="flex flex-col items-center text-primary">
+<span class="text-xl">🏠</span><span>Home</span>
+</button>
+<button onclick="nav('learn')" id="nav-learn" class="flex flex-col items-center text-slate-400">
+<span class="text-xl">📚</span><span>Learn</span>
+</button>
+<button onclick="nav('chat')" id="nav-chat" class="flex flex-col items-center text-slate-400">
+<span class="text-xl">💬</span><span>Chat</span>
+</button>
+<button onclick="nav('progress')" id="nav-progress" class="flex flex-col items-center text-slate-400">
+<span class="text-xl">📊</span><span>Progress</span>
+</button>
+<button onclick="nav('profile')" id="nav-profile" class="flex flex-col items-center text-slate-400">
+<span class="text-xl">👤</span><span>Profile</span>
+</button>
+</nav>
+
+<script>
+// State
+let currentScreen = 'splash';
+let userName = localStorage.getItem('ali-name') || 'Friend';
+let userStreak = parseInt(localStorage.getItem('ali-streak') || '12');
+let exerciseInterval = null;
+
+// Initialize
+setTimeout(() => {
+  if(localStorage.getItem('ali-onboarding') === 'true') {
+    nav('home');
+  } else {
+    nav('onboarding');
+  }
+}, 2000);
+
+// Navigation
+function nav(screen) {
+  const screens = ['splash', 'onboarding', 'home', 'checkin', 'chat', 'learn', 'progress', 'journal', 'exercises', 'exercise-detail', 'therapists', 'profile', 'settings', 'notifications', 'crisis'];
+  screens.forEach(s => document.getElementById('screen-' + s).classList.add('hidden'));
+  document.getElementById('screen-' + screen).classList.remove('hidden');
+  currentScreen = screen;
+  
+  // Update nav
+  const navItems = ['home', 'learn', 'chat', 'progress', 'profile'];
+  navItems.forEach(n => {
+    const el = document.getElementById('nav-' + n);
+    if(n === screen) { el.classList.remove('text-slate-400'); el.classList.add('text-primary'); }
+    else { el.classList.remove('text-primary'); el.classList.add('text-slate-400'); }
+  });
+  
+  // Scroll top
+  const el = document.getElementById('screen-' + screen);
+  if(el) el.scrollTop = 0;
+}
+
+// Onboarding
+function nextOnboarding(step) {
+  document.getElementById('onboarding-' + (step-1)).classList.add('hidden');
+  document.getElementById('onboarding-' + step).classList.remove('hidden');
+  document.getElementById('onboarding-step').textContent = step;
+}
+
+function selectAge(age) { nextOnboarding(3); }
+function selectGoal(goal) { nextOnboarding(4); }
+function selectOnboardingMood(mood) { nextOnboarding(5); }
+function selectStyle(style) {}
+
+function finishOnboarding() {
+  const name = document.getElementById('user-name').value;
+  if(name) userName = name;
+  localStorage.setItem('ali-name', userName);
+  localStorage.setItem('ali-onboarding', 'true');
+  document.getElementById('home-username').textContent = userName;
+  document.getElementById('profile-name').textContent = userName;
+  nav('home');
+}
+
+function skipOnboarding() {
+  localStorage.setItem('ali-onboarding', 'true');
+  nav('home');
+}
+
+// Check-in
+function selectCheckinMood(mood) {
+  let streak = parseInt(localStorage.getItem('ali-streak') || '12');
+  streak++;
+  localStorage.setItem('ali-streak', streak);
+  document.getElementById('streak-display').textContent = streak + ' Day Streak!';
+}
+
+function finishCheckin() {
+  alert('Check-in saved! Keep up the great work!');
+  nav('home');
+}
+
+// Chat
+function sendChat() {
+  const input = document.getElementById('chat-input');
+  const message = input.value.trim();
+  if(message) {
+    const container = document.getElementById('chat-messages');
+    container.innerHTML += '<div class="flex gap-3 justify-end ml-auto max-w-[85%]"><div class="bg-primary text-white rounded-2xl p-3 text-sm">' + message + '</div></div>';
+    input.value = '';
+    container.scrollTop = container.scrollHeight;
+    
+    setTimeout(() => {
+      const responses = [
+        "I hear you. How does that make you feel?",
+        "Thank you for sharing. Let's explore that further.",
+        "I'm here for you. What would help right now?",
+        "That's completely valid. Take your time."
+      ];
+      container.innerHTML += '<div class="flex gap-3 max-w-[85%]"><div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-xs font-bold text-primary">AI</div><div class="bg-white rounded-2xl p-3 shadow text-sm">' + responses[Math.floor(Math.random()*responses.length)] + '</div></div>';
+      container.scrollTop = container.scrollHeight;
+    }, 1000);
+  }
+}
+
+document.getElementById('chat-input').addEventListener('keypress', e => { if(e.key === 'Enter') sendChat(); });
+
+// Exercise
+function toggleExercise() {
+  const btn = document.getElementById('exercise-btn');
+  if(exerciseInterval) {
+    clearInterval(exerciseInterval);
+    exerciseInterval = null;
+    btn.textContent = 'Start';
+  } else {
+    btn.textContent = 'Stop';
+    let time = 180;
+    exerciseInterval = setInterval(() => {
+      const m = Math.floor(time/60);
+      const s = time%60;
+      document.getElementById('exercise-timer').textContent = m + ':' + (s<10?'0':'') + s;
+      if(time-- <= 0) {
+        clearInterval(exerciseInterval);
+        exerciseInterval = null;
+        btn.textContent = 'Start';
+      }
+    }, 1000);
+  }
+}
+
+// Learning
+function selectLearningPath(path) {
+  alert('Starting ' + path + ' learning path!');
+}
+
+// Journal
+function newJournalEntry() {
+  const note = prompt('What\'s on your mind?');
+  if(note) {
+    alert('Journal entry saved!');
+  }
+}
+
+// Greeting
+const hour = new Date().getHours();
+let greeting = 'Good morning';
+if(hour >= 12 && hour < 17) greeting = 'Good afternoon';
+else if(hour >= 17) greeting = 'Good evening';
+document.getElementById('greeting').textContent = greeting;
+document.getElementById('home-username').textContent = userName;
+document.getElementById('profile-name').textContent = userName;
+document.getElementById('streak-display').textContent = userStreak + ' Day Streak!';
+</script>
+</body>
+</html>

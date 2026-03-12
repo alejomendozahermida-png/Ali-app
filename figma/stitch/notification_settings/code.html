@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ali - Notification Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#943eea",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#191121",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header -->
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10 px-4 py-4">
+<div class="flex items-center justify-between max-w-lg mx-auto w-full">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight">Settings</h1>
+<div class="size-10"></div> <!-- Spacer for balance -->
+</div>
+</header>
+<main class="flex-1 max-w-lg mx-auto w-full px-4 pt-6 pb-24">
+<!-- Profile/Title Section -->
+<div class="mb-8">
+<h2 class="text-2xl font-bold mb-2">Notifications</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Manage how Ali communicates with you and keeps you on track.</p>
+</div>
+<!-- Reminder Group -->
+<section class="mb-8">
+<h3 class="text-xs font-bold uppercase tracking-wider text-primary mb-4 px-1">Daily Reminders</h3>
+<div class="bg-white dark:bg-slate-900/50 rounded-xl overflow-hidden shadow-sm border border-primary/5">
+<!-- Daily Check-in -->
+<div class="flex items-center justify-between p-4 border-b border-primary/5">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">calendar_today</span>
+</div>
+<div>
+<p class="font-semibold text-sm">Daily Check-in</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Evening reflection nudge</p>
+</div>
+</div>
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-slate-200 dark:bg-slate-700 p-0.5 transition-colors has-[:checked]:bg-primary">
+<div class="h-full w-[27px] rounded-full bg-white shadow-md transform transition-transform"></div>
+<input checked="" class="invisible absolute peer" type="checkbox"/>
+<style>
+                            input:checked + div { transform: translateX(20px); }
+                        </style>
+</label>
+</div>
+<!-- Morning Meditation -->
+<div class="flex items-center justify-between p-4 border-b border-primary/5">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">light_mode</span>
+</div>
+<div>
+<p class="font-semibold text-sm">Morning Meditation</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Start your day with peace</p>
+</div>
+</div>
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-slate-200 dark:bg-slate-700 p-0.5 transition-colors has-[:checked]:bg-primary">
+<div class="h-full w-[27px] rounded-full bg-white shadow-md transform transition-transform"></div>
+<input checked="" class="invisible absolute peer" type="checkbox"/>
+</label>
+</div>
+<!-- Weekly Insights -->
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">query_stats</span>
+</div>
+<div>
+<p class="font-semibold text-sm">Weekly Insights</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Summary of your progress</p>
+</div>
+</div>
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-slate-200 dark:bg-slate-700 p-0.5 transition-colors has-[:checked]:bg-primary">
+<div class="h-full w-[27px] rounded-full bg-white shadow-md transform transition-transform"></div>
+<input class="invisible absolute peer" type="checkbox"/>
+</label>
+</div>
+</div>
+</section>
+<!-- System Settings -->
+<section>
+<h3 class="text-xs font-bold uppercase tracking-wider text-primary mb-4 px-1">App Settings</h3>
+<div class="bg-white dark:bg-slate-900/50 rounded-xl overflow-hidden shadow-sm border border-primary/5">
+<a class="flex items-center justify-between p-4 border-b border-primary/5 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<p class="font-semibold text-sm">Reminder Times</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">8:00 AM, 9:00 PM</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors" href="#">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">volume_up</span>
+</div>
+<div>
+<p class="font-semibold text-sm">Sound &amp; Haptics</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Default (Zen Garden)</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</a>
+</div>
+</section>
+<!-- Promotion/Info Card -->
+<div class="mt-8 p-6 rounded-xl bg-gradient-to-br from-primary to-purple-600 text-white relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="font-bold text-lg mb-1">Stay Consistent</h4>
+<p class="text-sm opacity-90 leading-relaxed">Users who keep their reminders active are 3x more likely to reach their mindfulness goals.</p>
+</div>
+<!-- Abstract background shape -->
+<div class="absolute -right-8 -bottom-8 size-32 bg-white/10 rounded-full blur-2xl"></div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 pb-safe">
+<div class="flex items-center justify-around max-w-lg mx-auto h-16">
+<a class="flex flex-col items-center gap-0.5 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-0.5 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">self_improvement</span>
+<span class="text-[10px] font-medium">Meditate</span>
+</a>
+<a class="flex flex-col items-center gap-0.5 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="text-[10px] font-medium">Stats</span>
+</a>
+<a class="flex flex-col items-center gap-0.5 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</a>
+</div>
+</nav>
+</body></html>

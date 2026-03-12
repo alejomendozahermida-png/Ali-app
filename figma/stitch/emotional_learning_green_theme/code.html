@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Ali - Emotional Learning</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4ade80", // Updated to soft pastel green
+                        "secondary": "#22c55e", // Darker green for contrast
+                        "background-light": "#f8fafc",
+                        "background-dark": "#0f172a",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.75rem", // ROUND_TWELVE
+                        "lg": "1.25rem",
+                        "xl": "1.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        .duo-card-border {
+            border-bottom: 4px solid rgba(0,0,0,0.1);
+        }
+        body {
+            min-height: 100dvh;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 flex flex-col overflow-x-hidden">
+<!-- Header Navigation -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-md mx-auto px-4 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3 flex-1">
+<button class="p-2 -ml-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">close</span>
+</button>
+<div class="flex-1 h-3 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500" style="width: 65%;"></div>
+</div>
+</div>
+<div class="flex items-center gap-1.5 font-bold text-orange-500 ml-4">
+<span class="material-symbols-outlined fill-1">local_fire_department</span>
+<span>12</span>
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-md mx-auto w-full px-4 pt-6 pb-32 space-y-8">
+<!-- Welcome Section -->
+<section class="text-center">
+<h1 class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-2">Hi Ali, ready to grow?</h1>
+<p class="text-slate-500 dark:text-slate-400 font-medium">Keep up your daily emotional streak!</p>
+</section>
+<!-- Daily Goal Component -->
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl ios-shadow border border-slate-100 dark:border-slate-800">
+<div class="flex justify-between items-center mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">target</span>
+<span class="font-bold text-slate-700 dark:text-slate-200">Daily Goal</span>
+</div>
+<span class="text-sm font-bold bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full text-slate-600 dark:text-slate-400">6 / 10 XP</span>
+</div>
+<div class="h-4 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 60%;"></div>
+</div>
+</div>
+<!-- Lesson Path -->
+<div class="space-y-6 flex flex-col items-center">
+<!-- Unit Header -->
+<div class="w-full bg-primary/20 dark:bg-primary/10 p-6 rounded-xl border-2 border-primary/30 text-center relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="text-secondary dark:text-primary font-black text-xl uppercase tracking-wider">Unit 2</h2>
+<p class="text-slate-800 dark:text-slate-200 font-bold text-lg">Navigating Anxiety</p>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-9xl text-primary">psychology</span>
+</div>
+</div>
+<!-- Interactive Lesson Nodes -->
+<div class="flex flex-col items-center gap-12 w-full py-4">
+<!-- Current Lesson -->
+<div class="relative group cursor-pointer">
+<div class="w-24 h-24 rounded-full bg-primary p-1 duo-card-border flex items-center justify-center relative z-10 hover:scale-105 transition-transform active:scale-95">
+<div class="w-full h-full rounded-full border-4 border-white/30 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-4xl">air</span>
+</div>
+</div>
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white dark:bg-slate-800 px-4 py-1 rounded-lg ios-shadow border border-slate-200 dark:border-slate-700 font-bold text-sm">
+                        Breathwork
+                    </div>
+</div>
+<!-- Next Lesson -->
+<div class="relative group cursor-pointer translate-x-12">
+<div class="w-20 h-20 rounded-full bg-primary/60 dark:bg-primary/40 p-1 duo-card-border flex items-center justify-center relative z-10 opacity-80 hover:opacity-100 hover:scale-105 transition-transform active:scale-95">
+<div class="w-full h-full rounded-full border-4 border-white/30 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-3xl">self_improvement</span>
+</div>
+</div>
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white dark:bg-slate-800 px-4 py-1 rounded-lg ios-shadow border border-slate-200 dark:border-slate-700 font-bold text-sm">
+                        Self-Awareness
+                    </div>
+</div>
+<!-- Locked Lesson -->
+<div class="relative group -translate-x-12">
+<div class="w-20 h-20 rounded-full bg-slate-300 dark:bg-slate-700 duo-card-border flex items-center justify-center relative z-10">
+<div class="w-full h-full rounded-full border-4 border-white/10 flex items-center justify-center text-slate-500">
+<span class="material-symbols-outlined text-3xl">lock</span>
+</div>
+</div>
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white/50 dark:bg-slate-800/50 px-4 py-1 rounded-lg font-bold text-sm text-slate-400">
+                        Relationships
+                    </div>
+</div>
+<!-- Chest Reward -->
+<div class="pt-4">
+<div class="w-16 h-16 flex items-center justify-center bg-amber-100 dark:bg-amber-900/30 rounded-full border-2 border-amber-200 dark:border-amber-800">
+<span class="material-symbols-outlined text-4xl text-amber-500 fill-1">card_giftcard</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Featured Card -->
+<section class="mt-8">
+<h3 class="font-bold text-xl mb-4 text-slate-800 dark:text-slate-100 px-1">Challenge of the day</h3>
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden ios-shadow border border-slate-100 dark:border-slate-800 flex flex-col">
+<div class="h-48 bg-cover bg-center" data-alt="Abstract nature background with calming green leaves" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfFTqVMz4vE4Fn9jIMEeVAAJ3QUjMLFveenHiocMwDF-HNEhJmcTbRR-NNlQpmcLalatiJ5ICNQXtcBxRPRVm6CiFAA3vJBGGM-tJ5ihVgRNnrk0_Y2XXU811AmaXAz8WGbCOcT_SZ4Iy8aTbSGZfvqWmVSTe7IkT9sffASfzY6SoJH9dpnnz3gzns_cewrwv90gFgDWLhAV5-PS4_QNABsH_m8pQTtRbyR5csQe7oPlKZf-iB-ktpXhwYh8l0nvdINXu8pVPKOr85');"></div>
+<div class="p-5">
+<span class="text-xs font-bold text-secondary dark:text-primary uppercase tracking-widest">Mastery</span>
+<h4 class="text-lg font-bold mt-1">Thought Reframing</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1 mb-4">Practice turning negative thoughts into constructive ones in real-time.</p>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-black py-3 rounded-xl duo-card-border transition-all active:translate-y-1 active:border-b-0">
+                        CONTINUE UNIT
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Standardized 5-item) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/95 dark:bg-background-dark/95 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 pb-safe pt-2 px-2 safe-area-inset-bottom">
+<div class="max-w-md mx-auto flex justify-between items-center pb-6">
+<a class="flex-1 flex flex-col items-center gap-1 group text-slate-400" href="#">
+<div class="p-2 rounded-xl group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined">home</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Home</span>
+</a>
+<a class="flex-1 flex flex-col items-center gap-1 group" href="#">
+<div class="bg-primary/10 p-2 rounded-xl group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-primary fill-1">auto_stories</span>
+</div>
+<span class="text-[10px] font-bold text-primary uppercase tracking-tighter">Learn</span>
+</a>
+<a class="flex-1 flex flex-col items-center gap-1 group text-slate-400" href="#">
+<div class="p-2 rounded-xl group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined">chat_bubble</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Chat</span>
+</a>
+<a class="flex-1 flex flex-col items-center gap-1 group text-slate-400" href="#">
+<div class="p-2 rounded-xl group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Progress</span>
+</a>
+<a class="flex-1 flex flex-col items-center gap-1 group text-slate-400" href="#">
+<div class="p-2 rounded-xl group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined">calendar_month</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Booking</span>
+</a>
+</div>
+</nav>
+</body></html>

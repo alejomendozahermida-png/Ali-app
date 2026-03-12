@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ali - Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#943eea",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#191121",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden mx-auto max-w-md">
+<!-- Top Navigation -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between">
+<button class="text-slate-900 dark:text-slate-100 flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-12">Ali</h2>
+</div>
+<!-- Progress Indicator -->
+<div class="flex flex-col gap-3 p-4">
+<div class="flex gap-6 justify-between">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-semibold">Step 1 of 4</p>
+</div>
+<div class="rounded-full bg-slate-200 dark:bg-slate-800 h-2 w-full overflow-hidden">
+<div class="h-full rounded-full bg-primary" style="width: 25%;"></div>
+</div>
+</div>
+<!-- Character Mascot Section -->
+<div class="flex w-full grow bg-transparent @container px-4 py-6">
+<div class="w-full relative aspect-[4/3] rounded-xl flex items-center justify-center bg-gradient-to-b from-primary/10 to-transparent">
+<div class="w-48 h-48 bg-white dark:bg-slate-100 rounded-full relative shadow-lg flex items-center justify-center" data-alt="A friendly white blob mascot named Ali with a small smiling face">
+<!-- Simple CSS Mascot Representation -->
+<div class="flex flex-col items-center gap-2">
+<div class="flex gap-8">
+<div class="w-2 h-2 bg-slate-900 rounded-full"></div>
+<div class="w-2 h-2 bg-slate-900 rounded-full"></div>
+</div>
+<div class="w-4 h-1 bg-slate-900 rounded-full opacity-30"></div>
+</div>
+<!-- Decorative blush -->
+<div class="absolute w-full flex justify-around px-10">
+<div class="w-4 h-2 bg-pink-200 rounded-full blur-[2px]"></div>
+<div class="w-4 h-2 bg-pink-200 rounded-full blur-[2px]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Heading -->
+<h3 class="text-slate-900 dark:text-slate-100 tracking-tight text-2xl font-bold leading-tight px-6 text-center pb-4 pt-2">
+            What would you like to focus on today?
+        </h3>
+<!-- Options List -->
+<div class="flex flex-col gap-3 p-6 pt-0">
+<!-- Option 1: Anxiety -->
+<label class="group flex items-center gap-4 rounded-xl border-2 border-slate-200 dark:border-slate-800 p-4 bg-white dark:bg-slate-900 cursor-pointer transition-all hover:border-primary/50 has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+<input checked="" class="h-5 w-5 border-2 border-slate-300 text-primary focus:ring-primary focus:ring-offset-0 checked:bg-primary checked:border-primary" name="goal" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold">Reduce Anxiety</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Manage stress and find calm</p>
+</div>
+<span class="material-symbols-outlined text-primary/40 group-has-[:checked]:text-primary">spa</span>
+</label>
+<!-- Option 2: Sleep -->
+<label class="group flex items-center gap-4 rounded-xl border-2 border-slate-200 dark:border-slate-800 p-4 bg-white dark:bg-slate-900 cursor-pointer transition-all hover:border-primary/50 has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+<input class="h-5 w-5 border-2 border-slate-300 text-primary focus:ring-primary focus:ring-offset-0 checked:bg-primary checked:border-primary" name="goal" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold">Better Sleep</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Improve your sleep quality</p>
+</div>
+<span class="material-symbols-outlined text-primary/40 group-has-[:checked]:text-primary">bedtime</span>
+</label>
+<!-- Option 3: Focus -->
+<label class="group flex items-center gap-4 rounded-xl border-2 border-slate-200 dark:border-slate-800 p-4 bg-white dark:bg-slate-900 cursor-pointer transition-all hover:border-primary/50 has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+<input class="h-5 w-5 border-2 border-slate-300 text-primary focus:ring-primary focus:ring-offset-0 checked:bg-primary checked:border-primary" name="goal" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold">Focus</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Increase productivity and clarity</p>
+</div>
+<span class="material-symbols-outlined text-primary/40 group-has-[:checked]:text-primary">bolt</span>
+</label>
+<!-- Option 4: Self-Esteem -->
+<label class="group flex items-center gap-4 rounded-xl border-2 border-slate-200 dark:border-slate-800 p-4 bg-white dark:bg-slate-900 cursor-pointer transition-all hover:border-primary/50 has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+<input class="h-5 w-5 border-2 border-slate-300 text-primary focus:ring-primary focus:ring-offset-0 checked:bg-primary checked:border-primary" name="goal" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold">Self-Esteem</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Build confidence and self-love</p>
+</div>
+<span class="material-symbols-outlined text-primary/40 group-has-[:checked]:text-primary">favorite</span>
+</label>
+</div>
+<!-- Footer Action -->
+<div class="mt-auto p-6 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800">
+<button class="w-full bg-primary text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/25 active:scale-[0.98] transition-transform">
+                Continue
+            </button>
+</div>
+</div>
+</body></html>

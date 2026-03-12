@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#943eea",
+                        "secondary": "#60a5fa",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#191121",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Ali AI - Your Calm Companion</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<nav class="sticky top-0 z-10 flex items-center bg-white/80 dark:bg-background-dark/80 backdrop-blur-md p-4 justify-between border-b border-primary/10">
+<div class="text-primary flex size-10 shrink-0 items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+</div>
+<div class="flex flex-col items-center">
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight">Ali</h2>
+<div class="flex items-center gap-1">
+<div class="size-2 bg-green-500 rounded-full"></div>
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium">Listening...</span>
+</div>
+</div>
+<div class="flex size-10 items-center justify-end">
+<button class="flex items-center justify-center rounded-full h-10 w-10 bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-2xl">more_horiz</span>
+</button>
+</div>
+</nav>
+<!-- Main Chat Content -->
+<main class="flex-1 overflow-y-auto px-4 py-6 space-y-6">
+<!-- Ali Mascot Header -->
+<div class="flex w-full flex-col gap-4 items-center mb-8">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32 border-4 border-white dark:border-slate-800 shadow-xl shadow-primary/10" data-alt="Friendly minimalist purple and white mascot character" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBJdsE0C3U2wtDvgv3s9m4OMZzjlbFXJVu11vKzBIlUSBOcySmlLAz9gB2TH3pblO9NqeX6M6oZtqBwzJ2MPIkkoQo_aFoHEJ-kMrXLZtqGrNNRjeDZ6dMJYB4k9I8E7i0v1aVNvOCOrEiuYsygMpCs2kw8ZBB2-hPE1vJjM64ZLHIKV4Li-qFnyxP_qIk-hCkT27xLukBHQbCtwMQkVAkyLQPwIVpayewl7NtKCsyUEl7QVubdOcoRTwBZfGTZKM6lAbkwoxCMcLbu");'></div>
+<div class="absolute bottom-1 right-1 bg-white dark:bg-slate-800 p-1.5 rounded-full shadow-md">
+<span class="material-symbols-outlined text-primary text-xl">auto_awesome</span>
+</div>
+</div>
+<div class="flex flex-col items-center text-center">
+<p class="text-slate-900 dark:text-white text-2xl font-bold tracking-tight">Ali AI</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm max-w-[240px]">Your calm companion. Always here to listen and reflect.</p>
+</div>
+</div>
+<!-- Chat History -->
+<div class="flex items-end gap-3 max-w-[85%]">
+<div class="bg-primary/20 bg-center bg-no-repeat aspect-square bg-cover rounded-full w-9 shrink-0" data-alt="Ali AI small avatar icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAXiMGT7pSxSpJq-aNpduqgBCuKFEGj9Qna60TqUkU6ejj04765tnLWd8Bjy0GpqNRDNOz-wim5eivmgG2OQEB_M8GEMky_QJl1PVEPI2aZTnZEEV5ZCGcHAl7-U8uWNXhA5QZ0rnPb8L91j8Tc6ba6hj_0sNgvyTLkHpynEm_4u2FvugkHtHc0Smw2QptmEWrwES0TX7i5VZDnNjIqzmOHVuXLs4o5vOLqAqndeIWcjrt2zBVWj5sT72GnREaiUEoN5F7Ckod_TVuy");'></div>
+<div class="flex flex-col gap-1 items-start">
+<p class="text-slate-500 dark:text-slate-400 text-[11px] font-medium ml-1">Ali</p>
+<div class="text-base font-normal leading-relaxed rounded-2xl rounded-bl-none px-4 py-3 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 shadow-sm border border-primary/5">
+                    Hi! I'm here for you. How are you feeling today?
+                </div>
+</div>
+</div>
+<div class="flex items-end gap-3 justify-end ml-auto max-w-[85%]">
+<div class="flex flex-col gap-1 items-end">
+<p class="text-slate-500 dark:text-slate-400 text-[11px] font-medium mr-1">You</p>
+<div class="text-base font-normal leading-relaxed rounded-2xl rounded-br-none px-4 py-3 bg-primary text-white shadow-lg shadow-primary/20">
+                    I've been feeling a bit overwhelmed lately with work and personal life.
+                </div>
+</div>
+<div class="bg-slate-300 dark:bg-slate-700 bg-center bg-no-repeat aspect-square bg-cover rounded-full w-9 shrink-0" data-alt="User profile placeholder avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuATW4HJJgfy8otjZjTSt9lYblGaMruQ7EygHi3aOCZuVri6uxsNrbHH8yYf5myuZis6o0hL95Bk_vGDVW0BwpZRLTFtcRLuATUBcEdpeycvrNftTX_WrzZiFlRwSzPgYh29r6oZ2HfKmkshKu6NshraBbxzPM2ojo09qRaCnktJ7t1Q0YYEn7cfZuQfvbZocmWsR4R0W_o2lpsK-k6E93HwRdnho3YFF8Fk3tAv0el_gaNhdDMrL3PdonrGjBLQpKPlA2ljefuLetNO");'></div>
+</div>
+<div class="flex items-end gap-3 max-w-[85%]">
+<div class="bg-primary/20 bg-center bg-no-repeat aspect-square bg-cover rounded-full w-9 shrink-0" data-alt="Ali AI avatar icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDwJYpzJ2lFv-Mtz9pdthxFT3Im2KknvcGatV-0kir97Rar9MhGJMj5tPoorrNcuDLygGDhauGLySdIGizLQKsf8smJa-xTA9Viv9kcuGhWY3kk7k11eX0iT4tMHMJBnl-lIn-5KxrZy6Vpqg1LfktsDUO6eUkvDUoUWYfWJ9E1-517r9AgVObGzacERlwceAak5ZYDZyc9w1i_DWfyU5rSJiOqCjjdLBxGynuSbPjsjudz057bnL7hnlLVhTwQmlzz8rnKEIi8pCks");'></div>
+<div class="flex flex-col gap-1 items-start">
+<p class="text-slate-500 dark:text-slate-400 text-[11px] font-medium ml-1">Ali</p>
+<div class="text-base font-normal leading-relaxed rounded-2xl rounded-bl-none px-4 py-3 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 shadow-sm border border-primary/5">
+                    I hear you. That sounds like a lot to carry at once. What part of it feels heaviest right now?
+                </div>
+</div>
+</div>
+<!-- Suggestion Pills -->
+<div class="flex flex-wrap gap-2 py-4 justify-center">
+<button class="px-4 py-2 bg-secondary/10 text-secondary border border-secondary/20 rounded-full text-sm font-medium hover:bg-secondary/20 transition-colors">
+                Tell me more about that
+            </button>
+<button class="px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded-full text-sm font-medium hover:bg-primary/20 transition-colors">
+                I'm just tired
+            </button>
+<button class="px-4 py-2 bg-secondary/10 text-secondary border border-secondary/20 rounded-full text-sm font-medium hover:bg-secondary/20 transition-colors">
+                Help me relax
+            </button>
+</div>
+</main>
+<!-- Bottom Input Area -->
+<footer class="p-4 bg-white dark:bg-background-dark border-t border-primary/10">
+<div class="flex items-center gap-2 max-w-4xl mx-auto">
+<button class="flex size-10 shrink-0 items-center justify-center text-slate-400 dark:text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+<div class="relative flex-1">
+<input class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-full px-5 py-3 pr-12 focus:ring-2 focus:ring-primary/50 text-slate-800 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 transition-all" placeholder="Share your thoughts..." type="text"/>
+<button class="absolute right-1 top-1 flex size-10 items-center justify-center bg-primary text-white rounded-full hover:bg-primary/90 shadow-md transition-all">
+<span class="material-symbols-outlined text-xl">arrow_upward</span>
+</button>
+</div>
+<button class="flex size-10 shrink-0 items-center justify-center text-slate-400 dark:text-slate-500 hover:text-secondary transition-colors">
+<span class="material-symbols-outlined">mic</span>
+</button>
+</div>
+<div class="mt-2 text-center">
+<p class="text-[10px] text-slate-400 dark:text-slate-600 uppercase tracking-widest font-bold">End-to-End Encrypted &amp; Private</p>
+</div>
+</footer>
+</body></html>

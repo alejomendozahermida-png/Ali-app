@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Ali - Progress Tracking</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#943eea",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#191121",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.75rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .chart-gradient {
+            background: linear-gradient(180deg, rgba(148, 62, 234, 0.1) 0%, rgba(148, 62, 234, 0) 100%);
+        }
+        /* Mobile safe area spacing */
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        .pt-safe {
+            padding-top: env(safe-area-inset-top);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex min-h-screen w-full flex-col max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-xl">
+<!-- Header -->
+<header class="sticky top-0 z-20 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-3 pt-safe justify-between border-b border-primary/10">
+<button class="text-slate-900 dark:text-slate-100 flex size-10 items-center justify-center rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center">Your Progress</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<!-- Time Range Selector -->
+<div class="px-4 py-4">
+<div class="flex bg-primary/5 dark:bg-primary/10 rounded-xl p-1">
+<button class="flex-1 py-2 text-sm font-bold text-slate-500 dark:text-slate-400">Day</button>
+<button class="flex-1 py-2 text-sm font-bold bg-white dark:bg-primary text-primary dark:text-white rounded-lg shadow-sm transition-all">Week</button>
+<button class="flex-1 py-2 text-sm font-bold text-slate-500 dark:text-slate-400">Month</button>
+</div>
+</div>
+<!-- Main Content -->
+<main class="flex-1 px-4 pb-32 space-y-6">
+<!-- Mood History Section -->
+<section class="bg-white dark:bg-slate-900 rounded-2xl p-5 shadow-sm border border-primary/5">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-semibold uppercase tracking-wider">Weekly Mood History</p>
+<h3 class="text-2xl font-bold mt-1">Increasingly Stable</h3>
+</div>
+<div class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2.5 py-1 rounded-lg text-xs font-bold">
+                        +12%
+                    </div>
+</div>
+<div class="relative h-40 w-full mt-6">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 400 150">
+<defs>
+<lineargradient id="chartFill" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#943eea" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#943eea" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<!-- Area Fill -->
+<path d="M0,100 C50,80 100,120 150,60 C200,40 250,90 300,50 C350,30 400,10 400,10 L400,150 L0,150 Z" fill="url(#chartFill)"></path>
+<!-- Line -->
+<path d="M0,100 C50,80 100,120 150,60 C200,40 250,90 300,50 C350,30 400,10 400,10" fill="none" stroke="#943eea" stroke-linecap="round" stroke-width="3"></path>
+<!-- Points -->
+<circle cx="150" cy="60" fill="#943eea" r="4"></circle>
+<circle cx="300" cy="50" fill="#943eea" r="4"></circle>
+<circle cx="400" cy="10" fill="#943eea" r="6" stroke="white" stroke-width="2"></circle>
+</svg>
+<div class="flex justify-between mt-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+<span>Mon</span>
+<span>Tue</span>
+<span>Wed</span>
+<span>Thu</span>
+<span>Fri</span>
+<span>Sat</span>
+<span>Sun</span>
+</div>
+</div>
+</section>
+<!-- Habit Streaks -->
+<section>
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold mb-3 px-1">Habit Streaks</h3>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-primary/5 dark:bg-primary/20 p-4 rounded-2xl border border-primary/10">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-xl">self_improvement</span>
+<span class="text-[10px] font-bold uppercase tracking-wider text-primary">Meditation</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="text-2xl font-bold">12</span>
+<span class="text-xs font-medium text-slate-500">days</span>
+</div>
+<div class="mt-3 flex gap-1">
+<div class="h-1.5 flex-1 bg-primary rounded-full"></div>
+<div class="h-1.5 flex-1 bg-primary rounded-full"></div>
+<div class="h-1.5 flex-1 bg-primary/20 rounded-full"></div>
+</div>
+</div>
+<div class="bg-orange-50 dark:bg-orange-900/10 p-4 rounded-2xl border border-orange-200/50 dark:border-orange-500/20">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-orange-500 text-xl">menu_book</span>
+<span class="text-[10px] font-bold uppercase tracking-wider text-orange-500">Journaling</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="text-2xl font-bold">05</span>
+<span class="text-xs font-medium text-slate-500">days</span>
+</div>
+<div class="mt-3 flex gap-1">
+<div class="h-1.5 flex-1 bg-orange-500 rounded-full"></div>
+<div class="h-1.5 flex-1 bg-orange-500/20 rounded-full"></div>
+<div class="h-1.5 flex-1 bg-orange-500/20 rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Insights -->
+<section class="bg-gradient-to-br from-primary to-primary/80 rounded-2xl p-6 text-white shadow-lg relative overflow-hidden">
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-white/90">auto_awesome</span>
+<h3 class="font-bold text-[10px] uppercase tracking-widest">AI Weekly Insight</h3>
+</div>
+<p class="text-lg font-medium leading-relaxed">"Your mood peaks after morning meditation sessions. Try moving your session 15 minutes earlier for optimal flow."</p>
+<button class="mt-5 w-full text-sm font-bold bg-white/20 backdrop-blur-sm px-4 py-3 rounded-xl border border-white/30 hover:bg-white/30 active:scale-[0.98] transition-all">
+                        View Detailed Analysis
+                    </button>
+</div>
+<!-- Abstract circles for decoration -->
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+<div class="absolute -top-10 -left-10 w-32 h-32 bg-primary-dark/20 rounded-full blur-2xl"></div>
+</section>
+<!-- Emotional Growth Cards -->
+<section class="space-y-3">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold px-1">Growth Areas</h3>
+<div class="flex items-center gap-4 bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-primary/5">
+<div class="size-12 shrink-0 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600">
+<span class="material-symbols-outlined">sentiment_satisfied</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<h4 class="font-bold text-sm">Emotional Resilience</h4>
+<span class="text-[10px] font-bold text-slate-400">75%</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-2.5 rounded-full">
+<div class="bg-blue-500 h-full rounded-full w-[75%]"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-primary/5">
+<div class="size-12 shrink-0 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<h4 class="font-bold text-sm">Self-Awareness</h4>
+<span class="text-[10px] font-bold text-slate-400">60%</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-2.5 rounded-full">
+<div class="bg-purple-500 h-full rounded-full w-[60%]"></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto flex gap-1 border-t border-primary/10 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl px-2 pb-safe pt-3 z-50">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 py-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 py-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined text-[24px]">menu_book</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Learn</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 py-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined text-[24px]">chat_bubble</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Chat</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 py-1 text-primary" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1">query_stats</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Progress</p>
+<div class="w-1 h-1 bg-primary rounded-full -mt-1"></div>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 py-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined text-[24px]">event_available</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Booking</p>
+</a>
+</nav>
+</div>
+</body></html>

@@ -1,0 +1,13 @@
+{
+  "name": "ali_mental_health",
+  "version": "1.0.0",
+  "description": "Ali - Your Mental Health Companion App",
+  "main": "index.html",
+  "scripts": {
+    "start": "flutter run -d chrome",
+    "build-web": "flutter build web --release"
+  },
+  "dependencies": {
+    "flutter": "latest"
+  }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ali - Morning Dew</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#943eea",
+                        "accent-green": "#4ade80",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#191121",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .gradient-bg {
+            background: radial-gradient(circle at top right, rgba(148, 62, 234, 0.15), transparent),
+                        radial-gradient(circle at bottom left, rgba(74, 222, 128, 0.1), transparent);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen font-display">
+<div class="relative flex h-screen w-full flex-col overflow-hidden gradient-bg">
+<!-- Top Navigation -->
+<div class="flex items-center p-6 justify-between">
+<button class="text-slate-900 dark:text-slate-100 p-2 hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-tight text-center">Ali</h2>
+<button class="text-slate-900 dark:text-slate-100 p-2 hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-2xl">settings</span>
+</button>
+</div>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col items-center justify-center px-6">
+<!-- Circular Progress Ring Container -->
+<div class="relative flex items-center justify-center w-72 h-72 mb-12">
+<!-- Outer Ring (Background) -->
+<div class="absolute inset-0 border-[12px] border-primary/10 rounded-full"></div>
+<!-- Progress Ring (Active) -->
+<svg class="absolute inset-0 w-full h-full -rotate-90">
+<circle class="text-primary" cx="144" cy="144" fill="transparent" r="132" stroke="currentColor" stroke-dasharray="829" stroke-dashoffset="538" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<!-- Inner Content: Mascot Ali -->
+<div class="relative z-10 w-48 h-48 flex items-center justify-center bg-white dark:bg-slate-800 rounded-full shadow-xl overflow-hidden border-4 border-accent-green/30">
+<img alt="Mascot Ali in a calm meditative pose" class="w-32 h-32 object-contain" data-alt="Mascot Ali character sitting in a calm meditative pose with eyes closed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5hVG1TFh4QoAGqRGRwZReT1c4yZtf5-PFLRuNbQ2QZ_okAZ1PElL4fyDUoUQc5ru4TzkmUlShSThwk5iR8LECo_l-T1bdh1ERV_-F8ZHR9IQDLmUi57S7oDW9ES57QRBlm5Q4mbKxoFYoIN6VN2DGNcW_-Skv4sphra2dZyNKXwlS9n98zgTu3higyxztm916G2i0iBf_G7s_af6BZE0MGpHc5klOvcvVyOVEqNgTioHAnQhtYkuLwSd3sKrQHJsLHYjn-XbGWjO7"/>
+</div>
+</div>
+<!-- Title & Subtitle -->
+<div class="text-center mb-8">
+<h1 class="text-3xl font-bold tracking-tight mb-2">5 min Morning Dew</h1>
+<p class="text-slate-500 dark:text-slate-400 font-medium">Breathing Exercise</p>
+</div>
+<!-- Timer & Prompt -->
+<div class="w-full max-w-xs flex flex-col items-center gap-4">
+<div class="text-4xl font-bold text-primary">01:45</div>
+<div class="px-6 py-2 bg-accent-green/20 text-accent-green font-semibold rounded-full text-sm uppercase tracking-widest">
+                    Inhale Slowly
+                </div>
+</div>
+</div>
+<!-- Player Controls -->
+<div class="p-8 pb-12 flex items-center justify-center gap-10">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">replay_10</span>
+</button>
+<button class="size-20 flex items-center justify-center bg-primary text-white rounded-full shadow-lg shadow-primary/40 hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1">pause</span>
+</button>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">forward_10</span>
+</button>
+</div>
+<!-- Subtle Background Elements -->
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-accent-green/10 rounded-full blur-3xl -z-10"></div>
+<div class="absolute -top-24 -right-24 w-80 h-80 bg-primary/10 rounded-full blur-3xl -z-10"></div>
+</div>
+</body></html>

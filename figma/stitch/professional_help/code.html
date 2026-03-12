@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#943eea",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#191121",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.75rem", // ROUND_TWELVE from THEME_2
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        body {
+            min-height: 100dvh;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen w-full flex-col max-w-md mx-auto bg-white dark:bg-background-dark shadow-2xl overflow-x-hidden">
+<!-- Header -->
+<div class="sticky top-0 z-20 flex items-center bg-white/80 dark:bg-background-dark/80 backdrop-blur-md p-4 justify-between border-b border-primary/10">
+<button class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center">Book a Specialist</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+<!-- Hero Search Section -->
+<div class="px-4 pt-6 pb-2">
+<div class="bg-primary/5 rounded-xl p-5 border border-primary/10">
+<h1 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Find your perfect match</h1>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">Our specialists are here to help you navigate life's challenges in a safe space.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-white dark:bg-slate-800 rounded-full text-xs font-medium border border-primary/20 text-primary">Anxiety</span>
+<span class="px-3 py-1 bg-white dark:bg-slate-800 rounded-full text-xs font-medium border border-primary/20 text-primary">Stress</span>
+<span class="px-3 py-1 bg-white dark:bg-slate-800 rounded-full text-xs font-medium border border-primary/20 text-primary">Relationships</span>
+</div>
+</div>
+</div>
+<!-- Top Rated Section -->
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight px-4 pb-3 pt-6">Top Rated Specialists</h2>
+<div class="flex overflow-x-auto no-scrollbar snap-x scroll-smooth">
+<div class="flex items-stretch px-4 gap-4 pb-4">
+<!-- Specialist Card 1 -->
+<div class="flex h-full flex-col gap-3 rounded-xl min-w-[200px] snap-center">
+<div class="w-full bg-center bg-no-repeat aspect-[4/5] bg-cover rounded-xl shadow-sm" data-alt="Professional female psychologist smiling in bright office" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuByqrTkNHKxCYTTh9NAZV8sI1Ahy3dz0_M5lNo2psm9UxQM9KjOjA2A72dd79F_GQd2eX_bG4CyLZeLjgabBHLmqO4_ym1vik1bU6vXX0AJS_goPxWdEiwvT3-HU19eH8T7kFPORZEGoihU-vsz_piffOiLcOalhzwdYJl95D9LjoRgbaXfMEU8oJPX5O8A1r8pWmXTX_lR7O4I0Ac20WTufX4r-OQgiRy6cSkd7KZqR37HVhgNSciy6tu6adedDApf7TYih6x48Nc2");'></div>
+<div>
+<p class="text-slate-900 dark:text-white text-base font-bold leading-tight">Dr. Sarah Jenkins</p>
+<p class="text-primary text-sm font-medium mt-0.5">Clinical • 4.9 ★</p>
+</div>
+</div>
+<!-- Specialist Card 2 -->
+<div class="flex h-full flex-col gap-3 rounded-xl min-w-[200px] snap-center">
+<div class="w-full bg-center bg-no-repeat aspect-[4/5] bg-cover rounded-xl shadow-sm" data-alt="Experienced male psychologist sitting in therapy chair" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDhgJUaD8n8gDY5HBELhFO-B4jtFLVRJhGHe0_exZZax_uYbMaucIJ8eLw92qG8vWAopxz-PRgCcH29nIT7l_c4r7E5SsG_ClbjhqQGT0fnwhecHGLe6BqftJ4ofYzOv6MSc_rh97Yd679ig4aotURnUoVF9ZL1qjZ2k_WT2-IGoHtJQlfLetyYS-lNHhPN2IzOzsmSKX3Q8NQmbr45dgLKHByC1ce4NQozkPGfRiikIZv_6EuzAME7dY__VdPoRv4hdn1f2LHyYzDq");'></div>
+<div>
+<p class="text-slate-900 dark:text-white text-base font-bold leading-tight">Dr. Michael Chen</p>
+<p class="text-primary text-sm font-medium mt-0.5">CBT Specialist • 4.8 ★</p>
+</div>
+</div>
+<!-- Specialist Card 3 -->
+<div class="flex h-full flex-col gap-3 rounded-xl min-w-[200px] snap-center">
+<div class="w-full bg-center bg-no-repeat aspect-[4/5] bg-cover rounded-xl shadow-sm" data-alt="Friendly female family therapist with warm expression" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBc6uoPbs_MHgp3LVk08Waj01SLAgwkRSwKi4H1jC30z4tQhTT-KkuQYyGVZuKsEFzMHAF9VahUdqJp_Gu4Q58ucO5ZY8wn96vDyn477RrMr-wEQ5EHNuJ_3wIMBcqqt1W6amc-3mv65-ycnRtipnF7cEaGh83_A-5b1t7joZKFQJfrv8bqKU9-4JMOyQsL5wEDThZ-9oKL9PyAnJC_B8AGwuR9qXMp8bcfonXxaA8lkYMFaZTisUz9pBJQfJb6jaW_9AuQzenSMKbM");'></div>
+<div>
+<p class="text-slate-900 dark:text-white text-base font-bold leading-tight">Dr. Elena Rodriguez</p>
+<p class="text-primary text-sm font-medium mt-0.5">Family Therapy • 4.9 ★</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Booking Section -->
+<div class="bg-primary/5 dark:bg-primary/10 mx-4 mt-4 rounded-xl p-5 border border-primary/20">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold mb-4">Select Appointment</h3>
+<!-- Mini Calendar -->
+<div class="flex justify-between mb-6 px-1">
+<div class="flex flex-col items-center gap-1">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Mon</span>
+<button class="size-10 flex items-center justify-center rounded-full text-slate-900 dark:text-white font-semibold">12</button>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Tue</span>
+<button class="size-10 flex items-center justify-center rounded-full bg-primary text-white font-semibold shadow-lg shadow-primary/30">13</button>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Wed</span>
+<button class="size-10 flex items-center justify-center rounded-full text-slate-900 dark:text-white font-semibold">14</button>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Thu</span>
+<button class="size-10 flex items-center justify-center rounded-full text-slate-900 dark:text-white font-semibold">15</button>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Fri</span>
+<button class="size-10 flex items-center justify-center rounded-full text-slate-900 dark:text-white font-semibold">16</button>
+</div>
+</div>
+<!-- Time Slots -->
+<div class="grid grid-cols-3 gap-3 mb-6">
+<button class="py-2.5 px-1 border border-primary/20 rounded-lg text-sm text-center font-medium hover:bg-white dark:hover:bg-slate-800 transition-colors">09:00 AM</button>
+<button class="py-2.5 px-1 bg-white dark:bg-slate-800 border-2 border-primary rounded-lg text-sm text-center font-bold text-primary">10:30 AM</button>
+<button class="py-2.5 px-1 border border-primary/20 rounded-lg text-sm text-center font-medium hover:bg-white dark:hover:bg-slate-800 transition-colors">01:00 PM</button>
+<button class="py-2.5 px-1 border border-primary/20 rounded-lg text-sm text-center font-medium hover:bg-white dark:hover:bg-slate-800 transition-colors">02:30 PM</button>
+<button class="py-2.5 px-1 border border-primary/20 rounded-lg text-sm text-center font-medium hover:bg-white dark:hover:bg-slate-800 transition-colors">04:00 PM</button>
+<button class="py-2.5 px-1 border border-primary/20 rounded-lg text-sm text-center font-medium opacity-40 cursor-not-allowed">05:30 PM</button>
+</div>
+<button class="w-full bg-primary py-4 rounded-xl text-white font-bold text-base shadow-xl shadow-primary/20 active:scale-[0.98] transition-all">
+            Confirm Booking
+        </button>
+</div>
+<!-- Security Badge -->
+<div class="flex items-center justify-center gap-2 py-6 opacity-60">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span class="text-xs font-medium">End-to-end encrypted &amp; HIPAA compliant</span>
+</div>
+<div class="h-28"></div> <!-- Spacer for fixed Bottom Nav -->
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md border-t border-primary/5 bg-white/90 dark:bg-background-dark/90 backdrop-blur-lg px-6 pb-6 pt-3 flex justify-between items-center z-30">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Home</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Learn</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Chat</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">insights</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Progress</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Booking</p>
+</a>
+</div>
+</div>
+</body></html>
