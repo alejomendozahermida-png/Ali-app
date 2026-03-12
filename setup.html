@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>Setup Ali Database</title></head>
+<body>
+<h1>Click the button to setup your database:</h1>
+<button onclick="setup()" style="padding:20px;font-size:20px;background:#943eea;color:white;border:none;border-radius:10px;cursor:pointer">Setup Database</button>
+<p id="result"></p>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const supabase = window.supabase.createClient(
+  'https://gwfkdkunimthpobdcgod.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd3Zmtka3VuaW10aHBvYmRjZ29kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc4Nzc5ODksImV4cCI6MjA3MzQ1Mzk4OX0.I7InU-suAH_qaTersYRM7tpUwi70Gax49DOJnaz5JVo'
+);
+
+async function setup() {
+  try {
+    // Try to create users table
+    const { error } = await supabase.from('users').select('*').limit(1);
+    if (error && error.code === '42P01') {
+      document.getElementById('result').innerHTML = 'Please create tables in Supabase Dashboard → SQL Editor';
+    } else {
+      document.getElementById('result').innerHTML = 'Database connected! Tables ready!';
+    }
+  } catch(e) {
+    document.getElementById('result').innerHTML = 'Error: ' + e.message;
+  }
+}
+</script>
+</body>
+</html>
