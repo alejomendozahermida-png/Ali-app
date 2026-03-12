@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ali - Mental Health</title>
+<style>
+* {margin: 0; padding: 0; box-sizing: border-box}
+body {font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh}
+.hidden {display: none}
+.screen {height: 100vh; overflow: auto}
+.bg-white {background: white}
+.bg-gray-100 {background: #f3f4f6}
+.text-white {color: white}
+.text-center {text-align: center}
+.font-bold {font-weight: bold}
+.p-4 {padding: 1rem}
+.p-6 {padding: 1.5rem}
+.mb-2 {margin-bottom: 0.5rem}
+.mb-4 {margin-bottom: 1rem}
+.rounded-xl {border-radius: 0.75rem}
+.shadow {box-shadow: 0 1px 3px rgba(0,0,0,0.1)}
+.w-full {width: 100%}
+.h-screen {height: 100vh}
+.flex {display: flex}
+.items-center {align-items: center}
+.justify-center {justify-content: center}
+.justify-between {justify-content: space-between}
+.gap-2 {gap: 0.5rem}
+.gap-3 {gap: 0.75rem}
+.grid {display: grid}
+.grid-cols-4 {grid-template-columns: repeat(4, 1fr)}
+.text-4xl {font-size: 2.25rem}
+.text-2xl {font-size: 1.5rem}
+.text-xl {font-size: 1.25rem}
+.text-sm {font-size: 0.875rem}
+.text-xs {font-size: 0.75rem}
+.font-medium {font-weight: 500}
+input {padding: 0.75rem; border: 1px solid #ddd; border-radius: 0.75rem; width: 100%; margin-bottom: 0.75rem}
+button {padding: 0.75rem 1rem; background: #667eea; color: white; border: none; border-radius: 0.75rem; cursor: pointer}
+button:active {opacity: 0.8}
+.purple-btn {background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)}
+.fixed-bottom {position: fixed; bottom: 0; left: 0; right: 0; background: white; padding: 1rem; display: flex; justify-content: space-around; border-top: 1px solid #eee}
+.nav-btn {display: flex; flex-direction: column; align-items: center; font-size: 0.7rem; color: #999}
+.nav-btn.active {color: #667eea}
+#msgs {flex: 1; overflow: auto; padding: 1rem}
+.msg {max-width: 80%; margin-bottom: 0.5rem}
+.msg-user {margin-left: auto; text-align: right}
+.msg-ai {margin-right: auto}
+.msg-user div {background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 0.5rem 1rem; border-radius: 1rem 1rem 0 1rem; display: inline-block}
+.msg-ai div {background: white; padding: 0.5rem 1rem; border-radius: 1rem 1rem 1rem 0; box-shadow: 0 1px 2px rgba(0,0,0,0.1)}
+.emoji {font-size: 2rem; cursor: pointer; padding: 0.25rem}
+.emoji:hover {transform: scale(1.2)}
+</style>
+</head>
+<body>
+
+<!-- SPLASH -->
+<div id="splash" class="screen flex items-center justify-center">
+<h1 class="text-4xl font-bold text-white">Ali</h1>
+</div>
+
+<!-- LOGIN -->
+<div id="login" class="screen hidden p-6">
+<h1 class="text-2xl font-bold mb-4 text-center">Welcome to Ali</h1>
+<input type="email" placeholder="Email"/>
+<input type="password" placeholder="Password"/>
+<button onclick="nav('home')" class="purple-btn w-full">Sign In</button>
+<p class="text-center text-sm mt-4">No account? <span style="color:#667eea;cursor:pointer" onclick="nav('register')">Sign up</span></p>
+</div>
+
+<!-- REGISTER -->
+<div id="register" class="screen hidden p-6">
+<h1 class="text-2xl font-bold mb-4">Create Account</h1>
+<input placeholder="Name"/>
+<input placeholder="Email"/>
+<input type="password" placeholder="Password"/>
+<button onclick="nav('home')" class="purple-btn w-full">Create Account</button>
+</div>
+
+<!-- HOME -->
+<div id="home" class="screen hidden p-4 pb-20">
+<div class="flex justify-between items-center mb-4">
+<div class="flex items-center gap-3">
+<div style="width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-weight:bold;color:white">A</div>
+<div><p class="text-xs" style="color:rgba(255,255,255,0.7)">Good morning</p><p class="font-bold text-white">Alejandro</p></div>
+</div>
+</div>
+<div style="background:white;border-radius:0.75rem;padding:1rem;margin-bottom:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.1)">
+<p class="text-xl font-bold" style="color:#667eea">🔥 12 Day Streak!</p>
+</div>
+<div style="background:white;border-radius:0.75rem;padding:1rem;margin-bottom:1rem">
+<p class="font-bold mb-2">Daily Check-in</p>
+<button onclick="nav('checkin')" class="purple-btn w-full">Check In Now</button>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<button onclick="nav('chat')" class="bg-white rounded-lg p-2 text-center shadow"><div style="font-size:1.5rem">💬</div><div class="text-xs">Chat</div></button>
+<button onclick="nav('journal')" class="bg-white rounded-lg p-2 text-center shadow"><div style="font-size:1.5rem">📝</div><div class="text-xs">Journal</div></button>
+<button onclick="nav('exercises')" class="bg-white rounded-lg p-2 text-center shadow"><div style="font-size:1.5rem">🧘</div><div class="text-xs">Exercises</div></button>
+<button onclick="nav('therapists')" class="bg-white rounded-lg p-2 text-center shadow"><div style="font-size:1.5rem">👨‍⚕️</div><div class="text-xs">Help</div></button>
+</div>
+</div>
+
+<!-- CHECK-IN -->
+<div id="checkin" class="screen hidden p-4">
+<button onclick="nav('home')" style="color:#667eea;margin-bottom:1rem">← Back</button>
+<h2 class="font-bold mb-4">Daily Check-in</h2>
+<div style="background:white;border-radius:0.75rem;padding:1rem;margin-bottom:1rem">
+<p class="font-bold mb-3 text-center">How are you feeling?</p>
+<div style="display:flex;justify-content:space-around">
+<span class="emoji" onclick="selectMood('awful')">😔</span>
+<span class="emoji" onclick="selectMood('bad')">😕</span>
+<span class="emoji" onclick="selectMood('okay')">😐</span>
+<span class="emoji" onclick="selectMood('good')">😊</span>
+<span class="emoji" onclick="selectMood('great')">😄</span>
+</div>
+</div>
+<button onclick="finishCheckin()" class="purple-btn w-full">Save Check-in</button>
+</div>
+
+<!-- CHAT -->
+<div id="chat" class="screen hidden" style="display:flex;flex-direction:column">
+<div style="background:white;padding:1rem;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center">
+<button onclick="nav('home')" style="color:#667eea">←</button>
+<p class="font-bold">Ali</p>
+<button onclick="nav('crisis')" style="color:red;font-size:0.7rem">Crisis?</button>
+</div>
+<div id="msgs" style="flex:1;overflow:auto;padding:1rem">
+<div class="msg msg-ai"><div>Hi! I'm Ali. How are you feeling today?</div></div>
+</div>
+<div style="background:white;padding:1rem;border-top:1px solid #eee;display:flex;gap:0.5rem">
+<input id="chat-input" placeholder="Message..." style="flex:1;margin:0"/>
+<button onclick="sendChat()" class="purple-btn" style="padding:0.75rem">→</button>
+</div>
+</div>
+
+<!-- JOURNAL -->
+<div id="journal" class="screen hidden p-4 pb-20">
+<h2 class="font-bold mb-4">Journal</h2>
+<div style="background:white;border-radius:0.75rem;padding:1rem;margin-bottom:1rem;border-left:4px solid #10b981">
+<p class="text-xs" style="color:#999">Today</p>
+<p class="text-sm">Great meditation session. Feeling centered.</p>
+</div>
+</div>
+
+<!-- EXERCISES -->
+<div id="exercises" class="screen hidden p-4 pb-20">
+<h2 class="font-bold mb-4">Exercises</h2>
+<div style="background:white;border-radius:0.75rem;padding:1rem;margin-bottom:0.5rem;display:flex;align-items:center;gap:1rem">
+<div style="font-size:1.5rem">🌬️</div>
+<div><p class="font-bold text-sm">Box Breathing</p><p class="text-xs" style="color:#999">3 min</p></div>
+</div>
+<div style="background:white;border-radius:0.75rem;padding:1rem;margin-bottom:0.5rem;display:flex;align-items:center;gap:1rem">
+<div style="font-size:1.5rem">🧘</div>
+<div><p class="font-bold text-sm">5-4-3-2-1 Grounding</p><p class="text-xs" style="color:#999">5 min</p></div>
+</div>
+</div>
+
+<!-- THERAPISTS -->
+<div id="therapists" class="screen hidden p-4 pb-20">
+<h2 class="font-bold mb-4">Find a Professional</h2>
+<div style="background:white;border-radius:0.75rem;padding:1rem;margin-bottom:1rem">
+<div style="display:flex;align-items:center;gap:1rem;margin-bottom:0.5rem">
+<div style="font-size:2rem">👨‍⚕️</div>
+<div><p class="font-bold">Dr. Marie Laurent</p><p class="text-xs" style="color:#999">Psychologist</p></div>
+</div>
+<p class="text-sm" style="color:#666;margin-bottom:0.5rem">Anxiety & stress specialist.</p>
+<div style="display:flex;justify-content:space-between;align-items:center">
+<span style="color:#667eea;font-weight:bold">€60</span>
+<button onclick="nav('booking')" class="purple-btn" style="padding:0.5rem 1rem;font-size:0.8rem">Book</button>
+</div>
+</div>
+</div>
+
+<!-- BOOKING -->
+<div id="booking" class="screen hidden p-4">
+<button onclick="nav('therapists')" style="color:#667eea;margin-bottom:1rem">← Back</button>
+<h2 class="font-bold mb-4">Book Session</h2>
+<button class="purple-btn w-full">Confirm Booking</button>
+</div>
+
+<!-- CRISIS -->
+<div id="crisis" class="screen hidden" style="background:#fef2f2;padding:2rem">
+<h2 class="font-bold mb-4" style="color:#dc2626">Crisis Support</h2>
+<a href="tel:15" style="display:block;background:#dc2626;color:white;text-align:center;padding:1rem;border-radius:0.75rem;margin-bottom:0.5rem;text-decoration:none">Call 15 (SAMU)</a>
+<a href="tel:17" style="display:block;background:#dc2626;color:white;text-align:center;padding:1rem;border-radius:0.75rem;text-decoration:none">Call 17</a>
+</div>
+
+<!-- PROFILE -->
+<div id="profile" class="screen hidden p-4 pb-20">
+<h2 class="font-bold mb-4">Profile</h2>
+<div style="background:white;border-radius:0.75rem;padding:1.5rem;text-align:center;margin-bottom:1rem">
+<div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;color:white;font-size:2rem;font-weight:bold">A</div>
+<p class="font-bold text-xl">Alejandro</p>
+<p class="text-sm" style="color:#999">alejandro@email.com</p>
+</div>
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="fixed-bottom">
+<button onclick="nav('home')" id="nav-home" class="nav-btn active">🏠<div>Home</div></button>
+<button onclick="nav('chat')" id="nav-chat" class="nav-btn">💬<div>Chat</div></button>
+<button onclick="nav('journal')" id="nav-journal" class="nav-btn">📝<div>Journal</div></button>
+<button onclick="nav('profile')" id="nav-profile" class="nav-btn">👤<div>Profile</div></button>
+</div>
+
+<script>
+let currentScreen = 'splash';
+
+setTimeout(() => {nav('home');}, 2000);
+
+function nav(screen) {
+document.querySelectorAll('#splash,#login,#register,#home,#checkin,#chat,#journal,#exercises,#therapists,#booking,#crisis,#profile').forEach(e => e.classList.add('hidden'));
+document.getElementById(screen).classList.remove('hidden');
+currentScreen = screen;
+document.querySelectorAll('.nav-btn').forEach((el, i) => {
+let screens = ['home','chat','journal','profile'];
+el.classList.remove('active');
+if(screens[i] === screen) el.classList.add('active');
+});
+}
+
+function sendChat() {
+let i = document.getElementById('chat-input'), m = i.value.trim();
+if(m) {
+document.getElementById('msgs').innerHTML += '<div class="msg msg-user"><div>' + m + '</div></div>';
+i.value = '';
+setTimeout(() => {
+let r = ['I understand. How can I help?', 'Thank you for sharing.', 'I am here for you.'];
+document.getElementById('msgs').innerHTML += '<div class="msg msg-ai"><div>' + r[Math.floor(Math.random()*r.length)] + '</div></div>';
+}, 1000);
+}
+}
+
+document.getElementById('chat-input').addEventListener('keypress', e => { if(e.key === 'Enter') sendChat(); });
+
+function finishCheckin() {alert('Check-in saved!'); nav('home');}
+function selectMood(m) {}
+</script>
+</body>
+</html>
