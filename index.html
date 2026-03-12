@@ -3,561 +3,237 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Ali - Mental Health</title>
+<title>Ali - Mental Health Companion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <style>
 * {margin: 0; padding: 0; box-sizing: border-box}
-body {font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fcfaff; min-height: 100vh; padding-bottom: 70px}
+body {font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: #fcfaff; min-height: 100vh; padding-bottom: 80px; color: #1f2937}
 .hidden {display: none !important}
-.screen {height: 100vh; overflow-y: auto}
-
-/* Colors */
-:root {--primary: #943eea; --primary-light: #ede9fe; --green: #10b981; --text: #1f2937; --text-light: #6b7280; --bg: #fcfaff}
-
-/* Header */
-.header {background: rgba(252,250,255,0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(148,62,234,0.1)}
-.profile-pic {width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #943eea, #7c3aed); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; border: 2px solid rgba(148,62,234,0.3)}
-.greeting {font-size: 10px; color: var(--primary); font-weight: 500}
+.screen {height: 100vh; overflow-y: auto; padding-bottom: 80px}
+:root {--primary: #943eea; --primary-light: #f3e8ff; --primary-dark: #7c3aed; --blue: #60a5fa; --green: #10b981; --orange: #f97316; --bg: #fcfaff; --white: #ffffff; --text: #1f2937; --text-light: #6b7280; --border: #e5e7eb}
+.header {background: rgba(252,250,255,0.95); backdrop-filter: blur(20px); position: sticky; top: 0; z-index: 100; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center}
+.profile-pic {width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #943eea, #7c3aed); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 14px}
+.greeting {font-size: 11px; color: var(--primary); font-weight: 500}
 .username {font-weight: 700; font-size: 16px}
 .header-btns {display: flex; gap: 8px}
-.icon-btn {width: 36px; height: 36px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1); cursor: pointer; border: none}
-
-/* Streak Banner */
-.streak-banner {background: linear-gradient(135deg, #943eea, #7c3aed); margin: 16px; padding: 16px; border-radius: 16px; color: white; display: flex; justify-content: space-between; align-items: center}
-.streak-content {display: flex; align-items: center; gap: 12px}
-.streak-icon {background: rgba(255,255,255,0.2); padding: 8px; border-radius: 10px; font-size: 24px}
-.streak-text h2 {font-size: 20px; font-weight: 700}
-.streak-text p {font-size: 12px; opacity: 0.9}
-
-/* Mascot Section */
-.mascot-section {text-align: center; padding: 20px 16px}
-.mascot-container {position: relative; display: inline-block; margin-bottom: 12px}
-.mascot-glow {width: 100px; height: 100px; background: linear-gradient(135deg, rgba(148,62,234,0.2), rgba(148,62,234,0.05)); border-radius: 50%; padding: 4px; margin: 0 auto}
-.mascot {width: 92px; height: 92px; background: linear-gradient(135deg, #a78bfa, #7c3aed); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 48px}
-.sparkle {position: absolute; font-size: 20px}
-.sparkle-1 {top: -5px; right: -5px}
-.sparkle-2 {bottom: 5px; left: -8px}
-.mascot-section h2 {font-size: 18px; margin-bottom: 4px}
-.mascot-section p {font-size: 12px; color: var(--text-light)}
-
-/* Mood Tracker */
-.mood-section {background: white; margin: 16px; padding: 20px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.05)}
-.mood-section h3 {font-size: 14px; margin-bottom: 16px; text-align: center}
+.icon-btn {width: 36px; height: 36px; border-radius: 50%; background: var(--white); display: flex; align-items: center; justify-content: center; box-shadow: 0 1px 3px rgba(0,0,0,0.08); border: none; color: var(--text-light)}
+.streak-banner {background: linear-gradient(135deg, #943eea 0%, #7c3aed 100%); margin: 16px; padding: 20px; border-radius: 20px; color: white; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(148,62,234,0.3)}
+.streak-content {display: flex; align-items: center; gap: 14px}
+.streak-icon {background: rgba(255,255,255,0.2); padding: 10px; border-radius: 14px; font-size: 28px}
+.streak-text h2 {font-size: 22px; font-weight: 700}
+.streak-text p {font-size: 13px; opacity: 0.9}
+.streak-badge {background: rgba(255,255,255,0.2); padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600}
+.mascot-section {text-align: center; padding: 24px 16px 20px}
+.mascot-container {position: relative; display: inline-block; margin-bottom: 14px}
+.mascot-glow {width: 110px; height: 110px; background: linear-gradient(135deg, rgba(148,62,234,0.15), rgba(148,62,234,0.02)); border-radius: 50%; padding: 6px}
+.mascot {width: 98px; height: 98px; background: linear-gradient(135deg, #a78bfa, #7c3aed); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 52px; box-shadow: 0 8px 24px rgba(124,58,237,0.25)}
+.sparkle {position: absolute; font-size: 22px}
+.sparkle-1 {top: -8px; right: -8px}
+.sparkle-2 {bottom: 8px; left: -10px}
+.mascot-section h2 {font-size: 20px; font-weight: 700; margin-bottom: 6px}
+.mascot-section p {font-size: 13px; color: var(--text-light)}
+.mood-section {background: var(--white); margin: 16px; padding: 20px; border-radius: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.04)}
+.mood-section h3 {font-size: 14px; font-weight: 600; margin-bottom: 18px; text-align: center}
 .mood-options {display: flex; justify-content: space-between}
-.mood-btn {display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; padding: 8px; border-radius: 12px; transition: all 0.2s}
-.mood-btn:hover {background: rgba(148,62,234,0.05)}
-.mood-btn.active {background: rgba(148,62,234,0.1); border: 2px solid var(--primary)}
-.mood-emoji {font-size: 28px}
-.mood-label {font-size: 9px; font-weight: 600; text-transform: uppercase; color: var(--text-light)}
+.mood-btn {display: flex; flex-direction: column; align-items: center; gap: 6px; cursor: pointer; padding: 10px 6px; border-radius: 14px; transition: all 0.2s; border: 2px solid transparent}
+.mood-btn:hover {background: rgba(148,62,234,0.04)}
+.mood-btn.active {background: rgba(148,62,234,0.08); border: 2px solid var(--primary)}
+.mood-emoji {font-size: 32px}
+.mood-label {font-size: 10px; font-weight: 600; text-transform: uppercase; color: var(--text-light)}
 .mood-btn.active .mood-label {color: var(--primary)}
-
-/* Daily Card */
-.daily-card {background: white; margin: 16px; padding: 20px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; gap: 16px; align-items: center}
-.daily-icon {width: 56px; height: 56px; background: rgba(148,62,234,0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 28px}
+.daily-card {background: var(--white); margin: 16px; padding: 20px; border-radius: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); display: flex; gap: 16px; align-items: center}
+.daily-icon {width: 60px; height: 60px; background: linear-gradient(135deg, rgba(148,62,234,0.1), rgba(148,62,234,0.05)); border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: 30px}
 .daily-content {flex: 1}
-.daily-content h3 {font-size: 16px; margin-bottom: 4px}
-.daily-content p {font-size: 12px; color: var(--text-light); margin-bottom: 12px}
-.primary-btn {background: linear-gradient(135deg, #943eea, #7c3aed); color: white; border: none; padding: 10px 20px; border-radius: 12px; font-weight: 600; font-size: 14px; cursor: pointer; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px}
-
-/* Bottom Nav */
-.bottom-nav {position: fixed; bottom: 0; left: 0; right: 0; background: white; display: flex; justify-content: space-around; padding: 12px 8px 20px; border-top: 1px solid rgba(0,0,0,0.05)}
-.nav-btn {display: flex; flex-direction: column; align-items: center; gap: 4px; color: #9ca3af; font-size: 10px; cursor: pointer; border: none; background: none}
+.daily-content h3 {font-size: 16px; font-weight: 600; margin-bottom: 4px}
+.daily-content p {font-size: 13px; color: var(--text-light); margin-bottom: 14px}
+.primary-btn {background: linear-gradient(135deg, #943eea, #7c3aed); color: white; border: none; padding: 12px 24px; border-radius: 14px; font-weight: 600; font-size: 14px; cursor: pointer; width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(148,62,234,0.3)}
+.bottom-nav {position: fixed; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); display: flex; justify-content: space-around; padding: 12px 8px 24px; border-top: 1px solid rgba(0,0,0,0.04); z-index: 100}
+.nav-btn {display: flex; flex-direction: column; align-items: center; gap: 4px; color: #9ca3af; font-size: 10px; cursor: pointer; border: none; background: none; font-family: inherit; font-weight: 500}
 .nav-btn.active {color: var(--primary)}
-.nav-icon {font-size: 22px}
-
-/* Chat Screen */
-.chat-header {background: white; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee}
-.chat-back {color: var(--primary); background: none; border: none; font-size: 20px; cursor: pointer}
-.chat-title {font-weight: 700; font-size: 16px}
-.chat-status {display: flex; align-items: center; gap: 4px; font-size: 11px; color: var(--green)}
-.status-dot {width: 6px; height: 6px; background: var(--green); border-radius: 50%}
-.chat-menu {color: var(--primary); background: rgba(148,62,234,0.1); border: none; border-radius: 50%; width: 32px; height: 32px; cursor: pointer}
-
-.chat-profile {text-align: center; padding: 24px 16px}
-.chat-avatar {width: 100px; height: 100px; margin: 0 auto 12px; position: relative}
-.chat-avatar-main {width: 100px; height: 100px; background: linear-gradient(135deg, #a78bfa, #7c3aed); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 48px}
-.chat-avatar-sparkle {position: absolute; bottom: 0; right: 0; background: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; box-shadow: 0 2px 4px rgba(0,0,0,0.1)}
-.chat-profile h2 {font-size: 20px; margin-bottom: 4px}
-.chat-profile p {font-size: 12px; color: var(--text-light); max-width: 200px; margin: 0 auto}
-
+.nav-icon {font-size: 24px; font-family: 'Material Symbols Outlined'}
+.chat-header {background: var(--white); padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border)}
+.chat-back {color: var(--primary); background: none; border: none; font-size: 24px; cursor: pointer; font-family: 'Material Symbols Outlined'}
+.chat-title {font-weight: 700; font-size: 17px}
+.chat-status {display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--green)}
+.status-dot {width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse-dot 2s infinite}
+@keyframes pulse-dot {0%, 100% {opacity: 1} 50% {opacity: 0.5}}
+.chat-menu {color: var(--primary); background: rgba(148,62,234,0.1); border: none; border-radius: 50%; width: 36px; height: 36px; cursor: pointer; font-family: 'Material Symbols Outlined'}
+.chat-profile {text-align: center; padding: 28px 16px 20px}
+.chat-avatar {width: 110px; height: 110px; margin: 0 auto 14px; position: relative}
+.chat-avatar-main {width: 110px; height: 110px; background: linear-gradient(135deg, #a78bfa, #7c3aed); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 52px; box-shadow: 0 8px 24px rgba(124,58,237,0.25)}
+.chat-avatar-sparkle {position: absolute; bottom: 2px; right: 2px; background: var(--white); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1)}
+.chat-profile h2 {font-size: 22px; font-weight: 700; margin-bottom: 6px}
+.chat-profile p {font-size: 13px; color: var(--text-light); max-width: 220px; margin: 0 auto}
 .chat-messages {padding: 16px}
-.message {display: flex; gap: 8px; margin-bottom: 16px; max-width: 85%}
+.message {display: flex; gap: 10px; margin-bottom: 16px; max-width: 85%}
 .message.ai {align-items: flex-start}
 .message.user {flex-direction: row-reverse; margin-left: auto}
-.msg-avatar {width: 28px; height: 28px; border-radius: 50%; background: rgba(148,62,234,0.1); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold; color: var(--primary); flex-shrink: 0}
-.message.user .msg-avatar {background: var(--primary); color: white}
-.msg-bubble {background: white; padding: 10px 14px; border-radius: 16px; font-size: 14px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); line-height: 1.4}
+.msg-avatar {width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, rgba(148,62,234,0.15), rgba(148,62,234,0.08)); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: var(--primary)}
+.message.user .msg-avatar {background: linear-gradient(135deg, #943eea, #7c3aed); color: white}
+.msg-bubble {background: var(--white); padding: 12px 16px; border-radius: 18px; font-size: 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); line-height: 1.5}
 .message.user .msg-bubble {background: linear-gradient(135deg, #943eea, #7c3aed); color: white}
-.msg-time {font-size: 9px; color: #9ca3af; margin-top: 4px}
-
+.msg-time {font-size: 10px; color: #9ca3af; margin-top: 4px}
 .chat-suggestions {display: flex; gap: 8px; padding: 8px 16px; flex-wrap: wrap}
-.suggestion-btn {background: rgba(148,62,234,0.08); border: 1px solid rgba(148,62,234,0.2); color: var(--primary); padding: 8px 14px; border-radius: 20px; font-size: 12px; font-weight: 500; cursor: pointer}
-
-.chat-input-area {background: white; padding: 12px 16px; border-top: 1px solid #eee; display: flex; gap: 8px; align-items: center}
-.chat-input-area input {flex: 1; background: #f3f4f6; border: none; padding: 10px 14px; border-radius: 24px; font-size: 14px}
-.chat-input-area input:focus {outline: none; box-shadow: 0 0 0 2px rgba(148,62,234,0.2)}
-.chat-send {width: 40px; height: 40px; background: linear-gradient(135deg, #943eea, #7c3aed); border: none; border-radius: 50%; color: white; cursor: pointer; display: flex; align-items: center; justify-content: center}
-.chat-mic {color: #9ca3af; background: none; border: none; cursor: pointer; font-size: 20px}
-.privacy-note {text-align: center; padding: 8px; font-size: 9px; color: #9ca3af; letter-spacing: 0.5px}
-
-/* Crisis Button */
-.crisis-btn {color: #ef4444; font-size: 11px; font-weight: 600; background: none; border: none; cursor: pointer; animation: pulse 2s infinite}
-@keyframes pulse {0%, 100% {opacity: 1} 50% {opacity: 0.6}}
-
-/* Crisis Screen */
-.crisis-screen {background: #fef2f2; min-height: 100vh; padding: 24px 16px}
-.crisis-title {color: #dc2626; font-size: 20px; font-weight: 700; margin-bottom: 16px}
-.crisis-subtitle {color: #7f1d1d; margin-bottom: 24px}
-.crisis-btn-large {display: block; width: 100%; background: #dc2626; color: white; padding: 14px; border-radius: 12px; text-align: center; text-decoration: none; font-weight: 600; margin-bottom: 12px}
-.crisis-info {background: white; padding: 16px; border-radius: 12px; margin-top: 16px}
-.crisis-info h4 {margin-bottom: 8px}
-.crisis-info p {font-size: 13px; color: var(--text-light); margin-bottom: 4px}
-
-/* Exercises Screen */
-.library-header {background: white; padding: 16px; border-bottom: 1px solid #eee}
+.suggestion-btn {background: rgba(148,62,234,0.08); border: 1px solid rgba(148,62,234,0.15); color: var(--primary); padding: 10px 16px; border-radius: 24px; font-size: 13px; font-weight: 500; cursor: pointer; font-family: inherit}
+.chat-input-area {background: var(--white); padding: 12px 16px; border-top: 1px solid var(--border); display: flex; gap: 10px; align-items: center}
+.chat-input-area input {flex: 1; background: #f3f4f6; border: none; padding: 12px 18px; border-radius: 26px; font-size: 14px; font-family: inherit}
+.chat-send {width: 44px; height: 44px; background: linear-gradient(135deg, #943eea, #7c3aed); border: none; border-radius: 50%; color: white; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(148,62,234,0.3); font-family: 'Material Symbols Outlined'}
+.chat-mic {color: #9ca3af; background: none; border: none; cursor: pointer; font-size: 22px; font-family: 'Material Symbols Outlined'; padding: 8px}
+.privacy-note {text-align: center; padding: 10px; font-size: 10px; color: #9ca3af}
+.crisis-btn {color: #ef4444; font-size: 11px; font-weight: 600; background: none; border: none; cursor: pointer; text-decoration: underline}
+.library-header {background: var(--white); padding: 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px}
 .library-title {font-size: 18px; font-weight: 700}
-.search-bar {background: white; padding: 12px 16px}
-.search-input {width: 100%; background: #f3f4f6; border: none; padding: 10px 14px; border-radius: 10px; font-size: 14px}
-.categories {display: flex; gap: 8px; padding: 12px 16px; overflow-x: auto}
-.cat-btn {white-space: nowrap; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 500; cursor: pointer; border: none}
-.cat-btn.active {background: linear-gradient(135deg, #943eea, #7c3aed); color: white}
-.cat-btn:not(.active) {background: white; border: 1px solid #e5e7eb}
-
-.featured-card {margin: 16px; border-radius: 16px; overflow: hidden; position: relative}
-.featured-bg {background: linear-gradient(135deg, #943eea, #6366f1); height: 160px; padding: 16px; display: flex; align-items: flex-end; color: white}
-.featured-badge {position: absolute; top: 12px; left: 12px; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 10px; font-weight: 600}
-.featured-title {font-size: 18px; font-weight: 700; margin-bottom: 4px}
-.featured-meta {font-size: 12px; opacity: 0.9}
-.featured-play {position: absolute; right: 16px; bottom: 16px; width: 44px; height: 44px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 20px}
-
+.search-bar {background: var(--white); padding: 12px 16px}
+.search-input {width: 100%; background: #f3f4f6; border: none; padding: 12px 16px; border-radius: 12px; font-size: 14px}
+.categories {display: flex; gap: 10px; padding: 12px 16px; overflow-x: auto}
+.cat-btn {white-space: nowrap; padding: 10px 18px; border-radius: 24px; font-size: 13px; font-weight: 500; cursor: pointer; border: none; font-family: inherit}
+.cat-btn.active {background: linear-gradient(135deg, #943eea, #7c3aed); color: white; box-shadow: 0 2px 8px rgba(148,62,234,0.3)}
+.cat-btn:not(.active) {background: var(--white); border: 1px solid var(--border); color: var(--text-light)}
+.featured-card {margin: 16px; border-radius: 20px; overflow: hidden; position: relative; box-shadow: 0 4px 16px rgba(0,0,0,0.1)}
+.featured-bg {background: linear-gradient(135deg, #943eea, #6366f1); height: 170px; padding: 20px; display: flex; align-items: flex-end; color: white}
+.featured-badge {position: absolute; top: 16px; left: 16px; background: rgba(255,255,255,0.25); padding: 6px 14px; border-radius: 20px; font-size: 11px; font-weight: 600}
+.featured-title {font-size: 20px; font-weight: 700; margin-bottom: 4px}
+.featured-meta {font-size: 13px; opacity: 0.9}
+.featured-play {position: absolute; right: 20px; bottom: 20px; width: 50px; height: 50px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-family: 'Material Symbols Outlined'}
 .exercise-section {padding: 16px}
-.exercise-section h3 {font-size: 14px; font-weight: 600; margin-bottom: 12px}
+.exercise-section h3 {font-size: 15px; font-weight: 600; margin-bottom: 14px}
 .exercise-grid {display: grid; grid-template-columns: 1fr 1fr; gap: 12px}
-.exercise-card {background: white; padding: 14px; border-radius: 12px; display: flex; gap: 12px; align-items: center}
-.exercise-icon {width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px}
+.exercise-card {background: var(--white); padding: 16px; border-radius: 16px; display: flex; gap: 14px; align-items: center; box-shadow: 0 1px 4px rgba(0,0,0,0.04)}
+.exercise-icon {width: 46px; height: 46px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 22px}
 .exercise-icon.blue {background: #dbeafe}
 .exercise-icon.orange {background: #fed7aa}
 .exercise-icon.green {background: #d1fae5}
 .exercise-icon.purple {background: #ede9fe}
-.exercise-info h4 {font-size: 13px; font-weight: 600; margin-bottom: 2px}
-.exercise-info p {font-size: 11px; color: var(--text-light)}
+.exercise-info h4 {font-size: 14px; font-weight: 600; margin-bottom: 2px}
+.exercise-info p {font-size: 12px; color: var(--text-light)}
+.progress-header {background: var(--white); padding: 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px}
+.stats-grid {display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 20px 16px}
+.stat-card {background: var(--white); padding: 20px 12px; border-radius: 16px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.04)}
+.stat-value {font-size: 32px; font-weight: 700; margin-bottom: 4px}
+.stat-value.primary {color: var(--primary)}
+.stat-value.green {color: var(--green)}
+.stat-value.orange {color: var(--orange)}
+.stat-label {font-size: 12px; color: var(--text-light)}
+.learn-header {background: var(--white); padding: 20px 16px; border-bottom: 1px solid var(--border)}
+.learn-title {font-size: 20px; font-weight: 700; text-align: center}
+.progress-card {background: linear-gradient(135deg, #ede9fe, #f5f3ff); padding: 16px; border-radius: 16px; margin-bottom: 20px}
+.progress-label {font-size: 12px; color: var(--text-light); margin-bottom: 8px}
+.progress-header-row {display: flex; justify-content: space-between; margin-bottom: 8px}
+.progress-percent {font-weight: 600; color: var(--primary)}
+.progress-detail {font-size: 12px; color: var(--text-light)}
+.progress-bar {background: rgba(0,0,0,0.08); height: 8px; border-radius: 4px}
+.progress-fill {background: linear-gradient(135deg, #943eea, #7c3aed); height: 100%; border-radius: 4px; width: 10%}
+.lesson-grid {display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 0 16px 16px}
+.lesson-card {background: var(--white); padding: 18px; border-radius: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.04)}
+.lesson-icon {font-size: 36px; margin-bottom: 10px}
+.lesson-title {font-size: 14px; font-weight: 600; margin-bottom: 4px}
+.lesson-meta {font-size: 12px; color: var(--text-light); margin-bottom: 10px}
+.lesson-progress {background: #e5e7eb; height: 6px; border-radius: 3px}
+.lesson-fill {background: var(--primary); height: 100%; border-radius: 3px}
+.booking-header {background: var(--white); padding: 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px}
+.therapist-list {padding: 16px}
+.therapist-card {background: var(--white); padding: 18px; border-radius: 16px; margin-bottom: 14px; box-shadow: 0 1px 4px rgba(0,0,0,0.04)}
+.therapist-header {display: flex; gap: 14px; align-items: center; margin-bottom: 12px}
+.therapist-avatar {width: 56px; height: 56px; background: #f3f4f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px}
+.therapist-info h3 {font-size: 16px; font-weight: 600; margin-bottom: 2px}
+.therapist-info p {font-size: 12px; color: var(--text-light)}
+.therapist-bio {font-size: 13px; color: var(--text-light); margin-bottom: 14px}
+.therapist-footer {display: flex; justify-content: space-between; align-items: center}
+.therapist-price {font-size: 16px; font-weight: 700; color: var(--primary)}
+.book-btn {background: linear-gradient(135deg, #943eea, #7c3aed); color: white; border: none; padding: 10px 24px; border-radius: 12px; font-weight: 600; font-size: 14px; cursor: pointer}
+.crisis-screen {background: linear-gradient(180deg, #fef2f2, #fee2e2); min-height: 100vh; padding: 28px 20px}
+.crisis-title {color: #dc2626; font-size: 24px; font-weight: 700; margin-bottom: 10px}
+.crisis-subtitle {color: #7f1d1d; font-size: 14px; margin-bottom: 24px}
+.crisis-btn-large {display: block; width: 100%; background: #dc2626; color: white; padding: 16px; border-radius: 14px; text-align: center; text-decoration: none; font-weight: 600; margin-bottom: 12px; font-size: 16px; box-shadow: 0 4px 12px rgba(220,38,38,0.3)}
+.crisis-info {background: var(--white); padding: 18px; border-radius: 14px; margin-top: 20px}
+.crisis-info h4 {margin-bottom: 10px; font-size: 15px}
+.crisis-info p {font-size: 13px; color: var(--text-light); margin-bottom: 6px}
 </style>
 </head>
 <body>
-
-<!-- HOME SCREEN -->
 <div id="home" class="screen">
 <div class="header">
-<div style="display:flex;align-items:center;gap:12px">
-<div class="profile-pic">A</div>
-<div>
-<p class="greeting">Good morning</p>
-<p class="username">Hi, Ali!</p>
+<div style="display:flex;align-items:center;gap:12px"><div class="profile-pic">A</div><div><p class="greeting">Good morning</p><p class="username">Hi, Ali!</p></div></div>
+<div class="header-btns"><button class="icon-btn"><span class="material-symbols-outlined">notifications</span></button><button class="icon-btn"><span class="material-symbols-outlined">settings</span></button></div>
 </div>
-</div>
-<div class="header-btns">
-<button class="icon-btn">🔔</button>
-<button class="icon-btn">⚙️</button>
-</div>
-</div>
-
-<div class="streak-banner">
-<div class="streak-content">
-<div class="streak-icon">🔥</div>
-<div class="streak-text">
-<h2>12 Day Streak!</h2>
-<p>Keep it up, Ali!</p>
-</div>
-</div>
-</div>
-
+<div class="streak-banner"><div class="streak-content"><div class="streak-icon">🔥</div><div class="streak-text"><h2>12 Day Streak!</h2><p>Keep it up, Ali!</p></div></div><span class="streak-badge">+50 pts</span></div>
 <div class="mascot-section">
-<div class="mascot-container">
-<div class="mascot-glow">
-<div class="mascot">🐻</div>
+<div class="mascot-container"><div class="mascot-glow"><div class="mascot">🐻</div></div><span class="sparkle sparkle-1">✨</span><span class="sparkle sparkle-2">✨</span></div>
+<h2>How are you feeling today?</h2><p>Checking in helps you track your progress</p>
 </div>
-<span class="sparkle sparkle-1">✨</span>
-<span class="sparkle sparkle-2">✨</span>
-</div>
-<h2>How are you feeling today?</h2>
-<p>Checking in helps you track your progress</p>
-</div>
-
-<div class="mood-section">
+<div class="mood-section"><h3>How are you feeling?</h3>
 <div class="mood-options">
-<div class="mood-btn" onclick="selectMood(this)">
-<span class="mood-emoji">😔</span>
-<span class="mood-label">Awful</span>
-</div>
-<div class="mood-btn" onclick="selectMood(this)">
-<span class="mood-emoji">😕</span>
-<span class="mood-label">Sad</span>
-</div>
-<div class="mood-btn active" onclick="selectMood(this)">
-<span class="mood-emoji">😐</span>
-<span class="mood-label">Okay</span>
-</div>
-<div class="mood-btn" onclick="selectMood(this)">
-<span class="mood-emoji">😊</span>
-<span class="mood-label">Good</span>
-</div>
-<div class="mood-btn" onclick="selectMood(this)">
-<span class="mood-emoji">😄</span>
-<span class="mood-label">Great</span>
+<div class="mood-btn" onclick="selectMood(this)"><span class="mood-emoji">😔</span><span class="mood-label">Awful</span></div>
+<div class="mood-btn" onclick="selectMood(this)"><span class="mood-emoji">😕</span><span class="mood-label">Sad</span></div>
+<div class="mood-btn active" onclick="selectMood(this)"><span class="mood-emoji">😐</span><span class="mood-label">Okay</span></div>
+<div class="mood-btn" onclick="selectMood(this)"><span class="mood-emoji">😊</span><span class="mood-label">Good</span></div>
+<div class="mood-btn" onclick="selectMood(this)"><span class="mood-emoji">😄</span><span class="mood-label">Great</span></div>
 </div>
 </div>
+<div class="daily-card"><div class="daily-icon">🧘</div><div class="daily-content"><h3>Ready for your daily session?</h3><p>Just 5 minutes to center your mind.</p></div></div>
+<div style="padding:0 16px;margin-bottom:16px"><button class="primary-btn" onclick="nav('exercises')"><span class="material-symbols-outlined">play_arrow</span>Start Daily Exercise</button></div>
+<center><button class="crisis-btn" onclick="nav('crisis')">Need crisis support?</button></center>
 </div>
-
-<div class="daily-card">
-<div class="daily-icon">🧘</div>
-<div class="daily-content">
-<h3>Ready for your daily session?</h3>
-<p>Just 5 minutes to center your mind and reduce stress.</p>
-</div>
-</div>
-<div style="padding: 0 16px">
-<button class="primary-btn" onclick="nav('exercises')">
-Start Daily Exercise ▶
-</button>
-</div>
-</div>
-
-<!-- BOTTOM NAV -->
-<div class="bottom-nav">
-<button class="nav-btn active" onclick="nav('home')">
-<span class="nav-icon">🏠</span>
-<span>Home</span>
-</button>
-<button class="nav-btn" onclick="nav('learn')">
-<span class="nav-icon">🎓</span>
-<span>Learn</span>
-</button>
-<button class="nav-btn" onclick="nav('chat')">
-<span class="nav-icon">💬</span>
-<span>Chat</span>
-</button>
-<button class="nav-btn" onclick="nav('progress')">
-<span class="nav-icon">📊</span>
-<span>Progress</span>
-</button>
-<button class="nav-btn" onclick="nav('booking')">
-<span class="nav-icon">📅</span>
-<span>Booking</span>
-</button>
-</div>
-</div>
-
-<!-- CHAT SCREEN -->
 <div id="chat" class="screen hidden">
-<div class="chat-header">
-<button class="chat-back" onclick="nav('home')">←</button>
-<div>
-<p class="chat-title">Ali</p>
-<div class="chat-status"><span class="status-dot"></span>Listening...</div>
-</div>
-<button class="chat-menu">⋮</button>
-</div>
-
-<div class="chat-profile">
-<div class="chat-avatar">
-<div class="chat-avatar-main">🤖</div>
-<span class="chat-avatar-sparkle">✨</span>
-</div>
-<h2>Ali AI</h2>
-<p>Your calm companion. Always here to listen and reflect.</p>
-</div>
-
-<div class="chat-messages">
-<div class="message ai">
-<div class="msg-avatar">AI</div>
-<div>
-<div class="msg-bubble">Hi! I'm here for you. How are you feeling today?</div>
-<p class="msg-time">Ali</p>
-</div>
-</div>
-</div>
-
-<div class="chat-suggestions">
-<button class="suggestion-btn">Tell me more about that</button>
-<button class="suggestion-btn">I'm just tired</button>
-<button class="suggestion-btn">Help me relax</button>
-</div>
-
-<div class="chat-input-area">
-<button class="chat-mic">➕</button>
-<input type="text" placeholder="Share your thoughts..." id="chat-input" onkeypress="sendChat(event)">
-<button class="chat-send" onclick="sendMessage()">↑</button>
-</div>
+<div class="chat-header"><button class="chat-back" onclick="nav('home')">arrow_back</button><div><p class="chat-title">Ali</p><div class="chat-status"><span class="status-dot"></span>Listening...</div></div><button class="chat-menu">more_vert</button></div>
+<div class="chat-profile"><div class="chat-avatar"><div class="chat-avatar-main">🤖</div><span class="chat-avatar-sparkle">✨</span></div><h2>Ali AI</h2><p>Your calm companion. Always here to listen.</p></div>
+<div class="chat-messages"><div class="message ai"><div class="msg-avatar">AI</div><div><div class="msg-bubble">Hi! I'm here for you. How are you feeling today?</div><p class="msg-time">Just now</p></div></div></div>
+<div class="chat-suggestions"><button class="suggestion-btn">Tell me more</button><button class="suggestion-btn">I'm tired</button><button class="suggestion-btn">Help me relax</button></div>
+<div class="chat-input-area"><button class="chat-mic">add</button><input type="text" placeholder="Share your thoughts..." id="chat-input"><button class="chat-send" onclick="sendMessage()">send</button></div>
 <p class="privacy-note">END-TO-END ENCRYPTED</p>
 </div>
-
-<!-- EXERCISES SCREEN -->
 <div id="exercises" class="screen hidden">
-<div class="library-header">
-<button class="chat-back" onclick="nav('home')" style="color:var(--primary);background:none;border:none;font-size:20px;cursor:pointer">←</button>
-<span class="library-title" style="margin-left:8px">Meditation & Breathing</span>
+<div class="library-header"><button class="chat-back" onclick="nav('home')">arrow_back</button><span class="library-title">Meditation & Breathing</span></div>
+<div class="search-bar"><input type="text" class="search-input" placeholder="Search sessions..."></div>
+<div class="categories"><button class="cat-btn active">All</button><button class="cat-btn">Quick Calm</button><button class="cat-btn">Better Sleep</button></div>
+<div class="featured-card"><div class="featured-bg"><div><span class="featured-badge">DAILY PICK</span><h3 class="featured-title">Morning Serenity</h3><p class="featured-meta">10 min • Guided</p></div><span class="featured-play">play_arrow</span></div></div>
+<div class="exercise-section"><h3>Quick Calm</h3><div class="exercise-grid"><div class="exercise-card"><div class="exercise-icon blue">💨</div><div class="exercise-info"><h4>Box Breathing</h4><p>3 min</p></div></div><div class="exercise-card"><div class="exercise-icon orange">🧘</div><div class="exercise-info"><h4>Anxiety Relief</h4><p>5 min</p></div></div></div></div>
+<div class="exercise-section"><h3>Better Sleep</h3><div class="exercise-grid"><div class="exercise-card"><div class="exercise-icon purple">😴</div><div class="exercise-info"><h4>Deep Sleep</h4><p>25 min</p></div></div><div class="exercise-card"><div class="exercise-icon green">🌧️</div><div class="exercise-info"><h4>Rainfall</h4><p>Continuous</p></div></div></div></div>
 </div>
-<div class="search-bar">
-<input type="text" class="search-input" placeholder="Search sessions, sounds...">
+<div id="progress" class="screen hidden">
+<div class="progress-header"><button class="chat-back" onclick="nav('home')">arrow_back</button><span class="library-title">Your Progress</span></div>
+<div class="stats-grid"><div class="stat-card"><p class="stat-value primary">12</p><p class="stat-label">Day Streak</p></div><div class="stat-card"><p class="stat-value green">470</p><p class="stat-label">Points</p></div><div class="stat-card"><p class="stat-value orange">3</p><p class="stat-label">Badges</p></div></div>
 </div>
-<div class="categories">
-<button class="cat-btn active">All</button>
-<button class="cat-btn">Quick Calm</button>
-<button class="cat-btn">Better Sleep</button>
-<button class="cat-btn">Focus</button>
-</div>
-
-<div class="featured-card">
-<div class="featured-bg">
-<div>
-<span class="featured-badge">DAILY PICK</span>
-<h3 class="featured-title">Morning Serenity</h3>
-<p class="featured-meta">10 min • Guided Meditation</p>
-</div>
-<span class="featured-play">▶</span>
-</div>
-</div>
-
-<div class="exercise-section">
-<h3>Quick Calm</h3>
-<div class="exercise-grid">
-<div class="exercise-card">
-<div class="exercise-icon blue">💨</div>
-<div class="exercise-info">
-<h4>Box Breathing</h4>
-<p>3 minutes</p>
-</div>
-</div>
-<div class="exercise-card">
-<div class="exercise-icon orange">🧘</div>
-<div class="exercise-info">
-<h4>Anxiety Relief</h4>
-<p>5 minutes</p>
+<div id="learn" class="screen hidden">
+<div class="learn-header"><p class="learn-title">Learn</p></div>
+<div style="padding:20px 16px">
+<div class="progress-card"><p class="progress-label">Your Progress</p><div class="progress-header-row"><span class="progress-percent">10%</span><span class="progress-detail">3/31 lessons</span></div><div class="progress-bar"><div class="progress-fill"></div></div></div>
+<div class="lesson-grid">
+<div class="lesson-card"><div class="lesson-icon">😰</div><p class="lesson-title">Managing Anxiety</p><p class="lesson-meta">8 lessons</p><div class="lesson-progress"><div class="lesson-fill" style="width:30%"></div></div></div>
+<div class="lesson-card"><div class="lesson-icon">🧠</div><p class="lesson-title">Understanding Emotions</p><p class="lesson-meta">6 lessons</p><div class="lesson-progress"><div class="lesson-fill" style="width:60%"></div></div></div>
 </div>
 </div>
 </div>
-</div>
-
-<div class="exercise-section">
-<h3>Better Sleep</h3>
-<div class="exercise-grid">
-<div class="exercise-card">
-<div class="exercise-icon purple">😴</div>
-<div class="exercise-info">
-<h4>Deep Sleep</h4>
-<p>25 minutes</p>
-</div>
-</div>
-<div class="exercise-card">
-<div class="exercise-icon green">🌧️</div>
-<div class="exercise-info">
-<h4>Rainfall</h4>
-<p>Continuous</p>
+<div id="booking" class="screen hidden">
+<div class="booking-header"><button class="chat-back" onclick="nav('home')">arrow_back</button><span class="library-title">Professional Help</span></div>
+<div class="therapist-list">
+<div class="therapist-card">
+<div class="therapist-header"><div class="therapist-avatar">👨‍⚕️</div><div class="therapist-info"><h3>Dr. Marie Laurent</h3><p>Clinical Psychologist</p></div></div>
+<p class="therapist-bio">Specializes in anxiety, stress management, and life transitions.</p>
+<div class="therapist-footer"><span class="therapist-price">€60/session</span><button class="book-btn">Book</button></div>
 </div>
 </div>
 </div>
-</div>
-
-<div class="bottom-nav">
-<button class="nav-btn" onclick="nav('home')">
-<span class="nav-icon">🏠</span><span>Home</span>
-</button>
-<button class="nav-btn" onclick="nav('learn')">
-<span class="nav-icon">🎓</span><span>Learn</span>
-</button>
-<button class="nav-btn" onclick="nav('chat')">
-<span class="nav-icon">💬</span><span>Chat</span>
-</button>
-<button class="nav-btn" onclick="nav('progress')">
-<span class="nav-icon">📊</span><span>Progress</span>
-</button>
-<button class="nav-btn" onclick="nav('booking')">
-<span class="nav-icon">📅</span><span>Booking</span>
-</button>
-</div>
-</div>
-
-<!-- CRISIS SCREEN -->
 <div id="crisis" class="screen hidden crisis-screen">
-<h1 class="crisis-title">Crisis Support</h1>
-<p class="crisis-subtitle">You don't have to face this alone. Help is available.</p>
+<h1 class="crisis-title">Crisis Support</h1><p class="crisis-subtitle">You don't have to face this alone. Help is available.</p>
 <a href="tel:15" class="crisis-btn-large">Call 15 (SAMU)</a>
 <a href="tel:17" class="crisis-btn-large">Call 17 (Police)</a>
-<a href="tel:3114" class="crisis-btn-large">3114 (Depression)</a>
-
-<div class="crisis-info">
-<h4>📞 Other Resources</h4>
-<p>SOS Amitié: 01 40 09 15 22</p>
-<p>Child Help: 119</p>
-</div>
-
-<button class="primary-btn" onclick="nav('chat')" style="margin-top:24px">Talk to Ali</button>
-</div>
-
-<!-- PROGRESS SCREEN -->
-<div id="progress" class="screen hidden">
-<div class="library-header">
-<button class="chat-back" onclick="nav('home')" style="color:var(--primary);background:none;border:none;font-size:20px;cursor:pointer">←</button>
-<span class="library-title" style="margin-left:8px">Your Progress</span>
-</div>
-<div style="padding: 24px 16px">
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px">
-<div style="background:white;padding:16px;border-radius:12px;text-align:center">
-<p style="font-size:28px;font-weight:700;color:var(--primary)">12</p>
-<p style="font-size:11px;color:var(--text-light)">Day Streak</p>
-</div>
-<div style="background:white;padding:16px;border-radius:12px;text-align:center">
-<p style="font-size:28px;font-weight:700;color:var(--green)">47</p>
-<p style="font-size:11px;color:var(--text-light)">Points</p>
-</div>
-<div style="background:white;padding:16px;border-radius:12px;text-align:center">
-<p style="font-size:28px;font-weight:700;color:#f59e0b">3</p>
-<p style="font-size:11px;color:var(--text-light)">Badges</p>
-</div>
-</div>
+<div class="crisis-info"><h4>Other Resources</h4><p>SOS Amitié: 01 40 09 15 22</p><p>Depression: 3114</p></div>
+<button class="back-btn" onclick="nav('chat')">Talk to Ali</button>
 </div>
 <div class="bottom-nav">
-<button class="nav-btn" onclick="nav('home')">
-<span class="nav-icon">🏠</span><span>Home</span>
-</button>
-<button class="nav-btn" onclick="nav('learn')">
-<span class="nav-icon">🎓</span><span>Learn</span>
-</button>
-<button class="nav-btn" onclick="nav('chat')">
-<span class="nav-icon">💬</span><span>Chat</span>
-</button>
-<button class="nav-btn active" onclick="nav('progress')">
-<span class="nav-icon">📊</span><span>Progress</span>
-</button>
-<button class="nav-btn" onclick="nav('booking')">
-<span class="nav-icon">📅</span><span>Booking</span>
-</button>
+<button class="nav-btn active" onclick="nav('home')"><span class="nav-icon">home</span><span>Home</span></button>
+<button class="nav-btn" onclick="nav('learn')"><span class="nav-icon">school</span><span>Learn</span></button>
+<button class="nav-btn" onclick="nav('chat')"><span class="nav-icon">chat</span><span>Chat</span></button>
+<button class="nav-btn" onclick="nav('progress')"><span class="nav-icon">insights</span><span>Progress</span></button>
+<button class="nav-btn" onclick="nav('booking')"><span class="nav-icon">calendar_month</span><span>Booking</span></button>
 </div>
-</div>
-
-<!-- LEARN SCREEN -->
-<div id="learn" class="screen hidden">
-<div style="padding:16px;background:white;border-bottom:1px solid #eee">
-<p class="library-title" style="text-align:center">Learn</p>
-</div>
-<div style="padding:24px 16px">
-<div style="background:linear-gradient(135deg,#ede9fe,white);padding:16px;border-radius:12px;margin-bottom:20px">
-<p style="font-size:12px;color:var(--text-light);margin-bottom:8px">Your Progress</p>
-<div style="display:flex;justify-content:space-between;margin-bottom:8px">
-<span style="font-weight:600">10%</span>
-<span style="font-size:12px;color:var(--text-light)">3/31 lessons</span>
-</div>
-<div style="background:#e5e7eb;height:8px;border-radius:4px"><div style="background:var(--primary);width:10%;height:100%;border-radius:4px"></div></div>
-</div>
-
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-<div style="background:white;padding:16px;border-radius:12px">
-<div style="font-size:32px;margin-bottom:8px">😰</div>
-<p style="font-weight:600;font-size:13px">Managing Anxiety</p>
-<p style="font-size:11px;color:var(--text-light)">8 lessons</p>
-<div style="background:#e5e7eb;height:6px;border-radius:3px;margin-top:8px"><div style="background:var(--primary);width:30%;height:100%;border-radius:3px"></div></div>
-</div>
-<div style="background:white;padding:16px;border-radius:12px">
-<div style="font-size:32px;margin-bottom:8px">🧠</div>
-<p style="font-weight:600;font-size:13px">Understanding Emotions</p>
-<p style="font-size:11px;color:var(--text-light)">6 lessons</p>
-<div style="background:#e5e7eb;height:6px;border-radius:3px;margin-top:8px"><div style="background:var(--green);width:60%;height:100%;border-radius:3px"></div></div>
-</div>
-</div>
-</div>
-<div class="bottom-nav">
-<button class="nav-btn" onclick="nav('home')">
-<span class="nav-icon">🏠</span><span>Home</span>
-</button>
-<button class="nav-btn active" onclick="nav('learn')">
-<span class="nav-icon">🎓</span><span>Learn</span>
-</button>
-<button class="nav-btn" onclick="nav('chat')">
-<span class="nav-icon">💬</span><span>Chat</span>
-</button>
-<button class="nav-btn" onclick="nav('progress')">
-<span class="nav-icon">📊</span><span>Progress</span>
-</button>
-<button class="nav-btn" onclick="nav('booking')">
-<span class="nav-icon">📅</span><span>Booking</span>
-</button>
-</div>
-</div>
-
-<!-- BOOKING SCREEN -->
-<div id="booking" class="screen hidden">
-<div class="library-header">
-<button class="chat-back" onclick="nav('home')" style="color:var(--primary);background:none;border:none;font-size:20px;cursor:pointer">←</button>
-<span class="library-title" style="margin-left:8px">Professional Help</span>
-</div>
-<div style="padding:16px">
-<div style="background:white;padding:16px;border-radius:12px;margin-bottom:12px">
-<div style="display:flex;gap:12px;align-items:center;margin-bottom:12px">
-<div style="width:48px;height:48px;background:#e5e7eb;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px">👨‍⚕️</div>
-<div>
-<p style="font-weight:600">Dr. Marie Laurent</p>
-<p style="font-size:11px;color:var(--text-light)">Clinical Psychologist</p>
-</div>
-</div>
-<p style="font-size:13px;color:var(--text-light);margin-bottom:12px">Specializes in anxiety, stress management, and life transitions.</p>
-<div style="display:flex;justify-content:space-between;align-items:center">
-<span style="color:var(--primary);font-weight:600">€60/session</span>
-<button class="primary-btn" style="width:auto;padding:8px 20px">Book</button>
-</div>
-</div>
-</div>
-<div class="bottom-nav">
-<button class="nav-btn" onclick="nav('home')">
-<span class="nav-icon">🏠</span><span>Home</span>
-</button>
-<button class="nav-btn" onclick="nav('learn')">
-<span class="nav-icon">🎓</span><span>Learn</span>
-</button>
-<button class="nav-btn" onclick="nav('chat')">
-<span class="nav-icon">💬</span><span>Chat</span>
-</button>
-<button class="nav-btn" onclick="nav('progress')">
-<span class="nav-icon">📊</span><span>Progress</span>
-</button>
-<button class="nav-btn active" onclick="nav('booking')">
-<span class="nav-icon">📅</span><span>Booking</span>
-</button>
-</div>
-</div>
-
 <script>
-function nav(screen) {
-document.getElementById('home').classList.add('hidden');
-document.getElementById('chat').classList.add('hidden');
-document.getElementById('exercises').classList.add('hidden');
-document.getElementById('progress').classList.add('hidden');
-document.getElementById('learn').classList.add('hidden');
-document.getElementById('booking').classList.add('hidden');
-document.getElementById('crisis').classList.add('hidden');
-document.getElementById(screen).classList.remove('hidden');
-}
-
-function selectMood(btn) {
-document.querySelectorAll('.mood-btn').forEach(b => b.classList.remove('active'));
-btn.classList.add('active');
-}
-
-function sendChat(e) {
-if(e.key === 'Enter') sendMessage();
-}
-
-function sendMessage() {
-const input = document.getElementById('chat-input');
-const msg = input.value.trim();
-if(msg) {
-const container = document.querySelector('.chat-messages');
-container.innerHTML += '<div class="message user"><div class="msg-avatar">Y</div><div class="msg-bubble">' + msg + '</div></div>';
-input.value = '';
-setTimeout(() => {
-const responses = ["I understand. How does that make you feel?", "Thank you for sharing. Would you like to explore that further?", "I'm here to support you. What's on your mind?"];
-container.innerHTML += '<div class="message ai"><div class="msg-avatar">AI</div><div class="msg-bubble">' + responses[Math.floor(Math.random()*responses.length)] + '</div></div>';
-}, 1000);
-}
-}
+function nav(screen){document.querySelectorAll('.screen').forEach(s=>s.classList.add('hidden'));document.getElementById(screen).classList.remove('hidden');document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));event.target.closest('.nav-btn')?.classList.add('active')}
+function selectMood(btn){document.querySelectorAll('.mood-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active')}
+function sendMessage(){const input=document.getElementById('chat-input');const msg=input.value.trim();if(msg){const container=document.querySelector('.chat-messages');container.innerHTML+=`<div class="message user"><div class="msg-avatar">Y</div><div class="msg-bubble">${msg}</div></div>`;input.value='';setTimeout(()=>{const responses=["I understand. How does that make you feel?","Thank you for sharing. What's on your mind?","I'm here to support you."];container.innerHTML+=`<div class="message ai"><div class="msg-avatar">AI</div><div><div class="msg-bubble">${responses[Math.floor(Math.random()*responses.length)]}</div><p class="msg-time">Just now</p></div></div>`},1000)}}
 </script>
 </body>
 </html>
